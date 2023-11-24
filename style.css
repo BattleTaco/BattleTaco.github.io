@@ -16,7 +16,7 @@ header {
 
 nav ul {
     list-style: none;
-    padding: 0;
+    padding: 1;
 }
 
 nav ul li {
@@ -41,4 +41,34 @@ footer {
     position: absolute;
     bottom: 0;
     width: 100%;
+}
+
+.contact-info {
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+.contact-info h2 {
+    color: #0056b3; /* Change this color as needed */
+}
+
+.contact-info ul {
+    list-style: none;
+    padding: 0;
+}
+
+.contact-info ul li {
+    margin-bottom: 10px;
+    font-size: 1.1em;
+}
+
+.contact-info ul li a {
+    color: #007bff; /* Color for links */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-info ul li a:hover,
+.contact-info ul li a:focus {
+    color: #0056b3; /* Color when hovered/focused */
 }
