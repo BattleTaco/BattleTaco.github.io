@@ -72,14 +72,6 @@ footer {
     color: #0056b3; /* Color when hovered/focused */
 }
 
-/* Container for the button */
-.button-container {
-    display: flex;
-    justify-content: center; /* Center horizontally */
-    top: 0;
-    left: 0;
-}
-
 /* Button style */
 .resume-download-button {
     justify-content: center;
