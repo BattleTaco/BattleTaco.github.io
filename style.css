@@ -38,7 +38,6 @@ footer {
     padding: 10px;
     background: #333;
     color: #fff;
-    position: absolute;
     bottom: 0;
     width: 100%;
 }
@@ -71,4 +70,62 @@ footer {
 .contact-info ul li a:hover,
 .contact-info ul li a:focus {
     color: #0056b3; /* Color when hovered/focused */
+}
+
+/* Container for the button */
+.button-container {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    top: 0;
+    left: 0;
+}
+
+/* Button style */
+.resume-download-button {
+    justify-content: center;
+    display: flex;
+    padding: 10px 20px;
+    margin: 0; /* Margin set to 0 for accurate centering */
+    background-color: #0056b3; /* Adjust the color to match your site's theme */
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s ease;
+    top: 0;
+    left: 0;
+    margin-bottom: 40px;
+}
+
+.resume-download-button:hover,
+.resume-download-button:focus {
+    background-color: #003d82; /* Darker shade for hover effect */
+    color: #ffffff;
+    text-decoration: none; /* No underline on hover */
+}
+
+
+.work-experience {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 40px; 
+}
+
+.company-logo {
+    /* Your existing styles */
+    width: 200px;
+    margin-right: 5px; /* Adjust right margin to create more space between logo and details */
+}
+
+.experience-details {
+    margin-right: 10px; /* Add right margin if needed */
+}
+
+.role-description {
+    padding-top: 5px;
+    margin-left: 70px;
+}
+
+p {
+    margin-bottom: 5px; /* Adjust bottom margin of paragraphs to increase spacing between lines */
 }
