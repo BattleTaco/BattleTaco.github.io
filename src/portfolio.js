@@ -4,6 +4,7 @@
 
 import emoji from "react-easy-emoji";
 import splashAnimation from "./assets/lottie/splashAnimation"; // Rename to your file name for custom animation
+import resumePDF from "./containers/resume/resume.pdf";
 
 // Splash Screen
 
@@ -20,27 +21,26 @@ const illustration = {
 };
 
 const greeting = {
-  username: "Saad Pasta",
-  title: "Hi all, I'm Saad",
+  username: "Michael Ramirez",
+  title: "Hi all, I'm Michael",
   subTitle: emoji(
-    "A passionate Full Stack Software Developer 🚀 having an experience of building Web and Mobile applications with JavaScript / Reactjs / Nodejs / React Native and some other cool libraries and frameworks."
+    "I'm a Data Scientist specializing in AI/ML and statistics 📊 with experience in building deep learning models using Python, TensorFlow, and PyTorch. Passionate about creating data-driven solutions, especially in healthcare and computer vision 🚀."
   ),
-  resumeLink:
-    "https://drive.google.com/file/d/1ofFdKF_mqscH8WvXkSObnVvC9kK7Ldlu/view?usp=sharing", // Set to empty to hide the button
+   resumeLink: resumePDF, // Set to empty to hide the button
   displayGreeting: true // Set false to hide this section, defaults to true
 };
 
 // Social Media Links
 
 const socialMediaLinks = {
-  github: "https://github.com/saadpasta",
-  linkedin: "https://www.linkedin.com/in/saadpasta/",
-  gmail: "saadpasta70@gmail.com",
-  gitlab: "https://gitlab.com/saadpasta",
-  facebook: "https://www.facebook.com/saad.pasta7",
-  medium: "https://medium.com/@saadpasta",
-  stackoverflow: "https://stackoverflow.com/users/10422806/saad-pasta",
-  // Instagram, Twitter and Kaggle are also supported in the links!
+  github: "https://github.com/BattleTaco",
+  linkedin: "https://www.linkedin.com/in/michael-ramirez-ab011a1b1/",
+  gmail: "galvis14306@gmail.com",
+  gitlab: "https://gitlab.com/BattleTaco1",
+  instagram: "https://instagram.com/ramirez_m.r",
+  medium: "https://medium.com/BattleTaco",
+  stackoverflow: "https://stackoverflow.com/users/13587150/battletaco",
+  kaggle: "https://www.kaggle.com/battletaco",
   // To customize icons and social links, tweak src/components/SocialMedia
   display: true // Set true to display this section, defaults to false
 };
@@ -49,15 +49,14 @@ const socialMediaLinks = {
 
 const skillsSection = {
   title: "What I do",
-  subTitle: "CRAZY FULL STACK DEVELOPER WHO WANTS TO EXPLORE EVERY TECH STACK",
+  subTitle: "PASSIONATE DATA SCIENTIST & MACHINE LEARNING ENGINEER DRIVEN BY INNOVATIVE SOLUTIONS",
   skills: [
-    emoji(
-      "⚡ Develop highly interactive Front end / User Interfaces for your web and mobile applications"
-    ),
-    emoji("⚡ Progressive Web Applications ( PWA ) in normal and SPA Stacks"),
-    emoji(
-      "⚡ Integration of third party services such as Firebase/ AWS / Digital Ocean"
-    )
+    emoji("⚡ Build and optimize machine learning models for predictive analysis and decision-making"),
+    emoji("⚡ Develop deep learning solutions for computer vision, NLP, and healthcare applications"),
+    emoji("⚡ Leverage data science to drive insights, using tools like TensorFlow, PyTorch, and scikit-learn"),
+    emoji("⚡ Deploy scalable AI/ML models on cloud platforms like AWS and Google Cloud"),
+    emoji("⚡ Collaborate on end-to-end data pipelines and model deployment with a focus on real-time performance")
+
   ],
 
   /* Make Sure to include correct Font Awesome Classname to view your icon
@@ -65,56 +64,64 @@ https://fontawesome.com/icons?d=gallery */
 
   softwareSkills: [
     {
-      skillName: "html-5",
-      fontAwesomeClassname: "fab fa-html5"
+      skillName: "python",
+      fontAwesomeClassname: "fab fa-python"
     },
     {
-      skillName: "css3",
-      fontAwesomeClassname: "fab fa-css3-alt"
+      skillName: "pytorch",
+      customIcon: "src/logos/pytorch.svg"
     },
     {
-      skillName: "sass",
-      fontAwesomeClassname: "fab fa-sass"
+      skillName: "tensorflow",
+      customIcon: "src/logos/tensorflow.svg"
     },
     {
       skillName: "JavaScript",
       fontAwesomeClassname: "fab fa-js"
     },
     {
-      skillName: "reactjs",
-      fontAwesomeClassname: "fab fa-react"
+      skillName: "java",
+      fontAwesomeClassname: "fab fa-java"
     },
     {
-      skillName: "nodejs",
-      fontAwesomeClassname: "fab fa-node"
+      skillName: "R",
+      fontAwesomeClassname: "fab fa-r-project"
     },
     {
-      skillName: "swift",
-      fontAwesomeClassname: "fab fa-swift"
+      skillName: "git",
+      fontAwesomeClassname: "fab fa-git"
     },
     {
-      skillName: "npm",
-      fontAwesomeClassname: "fab fa-npm"
+      skillName: "linux",
+      fontAwesomeClassname: "fab fa-linux"
     },
     {
-      skillName: "sql-database",
-      fontAwesomeClassname: "fas fa-database"
+      skillName: "mySQL",
+      customIcon: "src/logos/mysqp.svg"
+    },
+    {
+      skillName: "postgreSQL",
+      customIcon: "src/logos/postgresql.svg"
     },
     {
       skillName: "aws",
       fontAwesomeClassname: "fab fa-aws"
     },
     {
-      skillName: "firebase",
-      fontAwesomeClassname: "fas fa-fire"
-    },
-    {
-      skillName: "python",
-      fontAwesomeClassname: "fab fa-python"
-    },
-    {
       skillName: "docker",
       fontAwesomeClassname: "fab fa-docker"
+    },
+    {
+      skillName: "C",
+      fontAwesomeClassname: "fas fa-code"
+    },
+    {
+      skillName: "pandas",
+      customIcon: "src/logos/pandas.svg"
+    },
+    {
+      skillName: "Cplusplus",
+      customIcon: "src/logos/cplusplus.svg"
     }
   ],
   display: true // Set false to hide this section, defaults to true
@@ -126,23 +133,29 @@ const educationInfo = {
   display: true, // Set false to hide this section, defaults to true
   schools: [
     {
-      schoolName: "Harvard University",
-      logo: require("./assets/images/harvardLogo.png"),
+      schoolName: "Georgia Institute of Technology",
+      logo: require("./assets/images/Georgia-Tech-Logo-PNG-Picture1.png"),
       subHeader: "Master of Science in Computer Science",
-      duration: "September 2017 - April 2019",
-      desc: "Participated in the research of XXX and published 3 papers.",
+      duration: "January 2025 - Current",
+      desc: "Pursuing a Master of Science in Computer Science at Georgia Tech, ranked among the top 10 computer science programs in the world. Specializing in Artificial Intelligence and Machine Learning, with coursework designed to deepen expertise in AI/ML algorithms, data processing, and large-scale systems.",
       descBullets: [
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit"
-      ]
+        "Enrolled in one of the top-ranked CS programs globally, focusing on AI, Machine Learning, algorithms, and systems design.",
+        "Pursuing advanced courses in Machine Learning, Artificial Intelligence, Algorithm Design, Database Systems, and High-Performance Computing.",
+        "Building a foundation in scalable and efficient algorithm design, advanced database systems, and the deployment of large-scale data processing solutions.",
+        "Exposure to cutting-edge research and development in areas such as distributed systems, advanced algorithms, and AI, all from a globally recognized institution."
+      ]    
     },
     {
-      schoolName: "Stanford University",
-      logo: require("./assets/images/stanfordLogo.png"),
-      subHeader: "Bachelor of Science in Computer Science",
-      duration: "September 2013 - April 2017",
-      desc: "Ranked top 10% in the program. Took courses about Software Engineering, Web Security, Operating Systems, ...",
-      descBullets: ["Lorem ipsum dolor sit amet, consectetur adipiscing elit"]
+      schoolName: "University of Minnesota - Twin Cities",
+      logo: require("./assets/images/m2.avif"),
+      subHeader: "Bachelor of Arts in Computer Science",
+      duration: "September 2020 - May 2024",
+      desc: "Graduated with a strong foundation in Computer Science, focusing on AI, machine learning, and deep learning. Took advanced courses in deep learning, statistical computing, and AI, while actively participating in research projects that applied cutting-edge techniques to healthcare and robotics.",
+      descBullets: [
+        "Led research in robotic-assisted laparoscopic surgery, improving model accuracy by 15% using deep learning techniques and novel segmentation algorithms.",
+        "Completed advanced courses such as Machine Learning Fundamentals, Deep Learning, Statistical Computing, and Regression Analysis, consistently applying statistical methods to real-world problems.",
+        "Developed a strong foundation in computational linear algebra and programming principles, enabling the creation of efficient algorithms for large-scale data analysis."
+      ]
     }
   ]
 };
@@ -153,20 +166,29 @@ const techStack = {
   viewSkillBars: true, //Set it to true to show Proficiency Section
   experience: [
     {
-      Stack: "Frontend/Design", //Insert stack or technology you have experience in
-      progressPercentage: "90%" //Insert relative proficiency in percentage
+      Stack: "Machine Learning & Predictive Modeling",
+      progressPercentage: "90%" 
     },
     {
-      Stack: "Backend",
-      progressPercentage: "70%"
+      Stack: "Deep Learning (TensorFlow, PyTorch)",
+      progressPercentage: "85%"
     },
     {
-      Stack: "Programming",
-      progressPercentage: "60%"
+      Stack: "Statistical Modeling & Data Analysis",
+      progressPercentage: "85%"
+    },
+    {
+      Stack: "Data Wrangling & Data Engineering",
+      progressPercentage: "80%"
+    },
+    {
+      Stack: "Cloud Computing & Model Deployment",
+      progressPercentage: "75%"
     }
   ],
-  displayCodersrank: false // Set true to display codersrank badges section need to changes your username in src/containers/skillProgress/skillProgress.js:17:62, defaults to false
+  displayCodersrank: false // Set to true if you're displaying Codersrank badges
 };
+
 
 // Work experience section
 
@@ -174,29 +196,43 @@ const workExperiences = {
   display: true, //Set it to true to show workExperiences Section
   experience: [
     {
-      role: "Software Engineer",
-      company: "Facebook",
-      companylogo: require("./assets/images/facebookLogo.png"),
-      date: "June 2018 – Present",
-      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      role: "Jr. Data Scientist",
+      company: "Marani Health",
+      companylogo: require("./assets/images/marani.png"),
+      date: "May 2023 – Present",
+      desc: "Served as the sole Data Scientist in a fast-growing health tech startup, conducting in-depth research, statistical analysis, and signal processing to support innovative maternal and fetal health solutions.",
       descBullets: [
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit"
+        "Developed and refined signal processing algorithms to enhance the accuracy and reliability of maternal and fetal health monitoring systems.",
+        "Conducted extensive statistical analysis and research to validate data integrity and improve healthcare outcomes.",
+        "Worked closely with engineers and clinicians to design and implement a comprehensive metrics dashboard, utilizing SQL and database management to track key health indicators.",
+        "Contributed to research and data initiatives that supported regulatory processes, including FDA approval for cutting-edge health technology."
       ]
     },
     {
-      role: "Front-End Developer",
-      company: "Quora",
-      companylogo: require("./assets/images/quoraLogo.png"),
-      date: "May 2017 – May 2018",
-      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+      role: "Modeling and Simulations Intern",
+      company: "Donaldson Inc.",
+      companylogo: require("./assets/images/donaldson.jpg"),
+      date: "Feb 2022 – Aug 2022",
+      desc: "Contributed to the development and optimization of data-driven solutions in a global manufacturing environment, focusing on predictive analytics, statistical modeling, and process improvements.",
+      descBullets: [
+        "Developed predictive models and statistical analyses to enhance manufacturing efficiency and reduce operational costs.",
+        "Worked with large datasets to identify trends and anomalies, leading to process optimizations in filtration systems.",
+        "Collaborated with cross-functional teams to integrate data insights into production workflows, improving product quality and consistency.",
+        "Automated data collection and reporting processes, providing real-time visibility into key performance indicators for senior management."
+      ]
     },
     {
-      role: "Software Engineer Intern",
-      company: "Airbnb",
-      companylogo: require("./assets/images/airbnbLogo.png"),
-      date: "Jan 2015 – Sep 2015",
-      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+      role: "Software Engineer",
+      company: "i4Score",
+      companylogo: require("./assets/images/i4.png"),
+      date: "Jan 2022 – May 2022",
+      desc: "Worked on advanced data analytics and machine learning projects, contributing to the development of performance metrics and predictive models aimed at improving business decision-making and operational efficiency.",
+      descBullets: [
+        "Built and optimized machine learning models to predict key business performance metrics, improving forecasting accuracy and strategic planning.",
+        "Conducted detailed statistical analyses to identify patterns and insights, providing actionable data to drive business outcomes.",
+        "Collaborated with a multidisciplinary team to develop data pipelines and automate the delivery of performance metrics in real-time.",
+        "Worked on integrating predictive analytics into existing business processes, leading to more efficient resource allocation and improved decision-making."
+      ]      
     }
   ]
 };
@@ -239,7 +275,7 @@ const bigProjects = {
       ]
     }
   ],
-  display: true // Set false to hide this section, defaults to true
+  display: false // Set false to hide this section, defaults to true
 };
 
 // Achievement Section
@@ -300,7 +336,7 @@ const achievementSection = {
       ]
     }
   ],
-  display: true // Set false to hide this section, defaults to true
+  display: false // Set false to hide this section, defaults to true
 };
 
 // Blogs Section
@@ -324,7 +360,7 @@ const blogSection = {
         "React is a JavaScript library for building User Interface. It is maintained by Facebook and a community of individual developers and companies."
     }
   ],
-  display: true // Set false to hide this section, defaults to true
+  display: false // Set false to hide this section, defaults to true
 };
 
 // Talks Sections
@@ -343,7 +379,7 @@ const talkSection = {
       event_url: "https://www.facebook.com/events/2339906106275053/"
     }
   ],
-  display: true // Set false to hide this section, defaults to true
+  display: false // Set false to hide this section, defaults to true
 };
 
 // Podcast Section
@@ -356,7 +392,7 @@ const podcastSection = {
   podcast: [
     "https://anchor.fm/codevcast/embed/episodes/DevStory---Saad-Pasta-from-Karachi--Pakistan-e9givv/a-a15itvo"
   ],
-  display: true // Set false to hide this section, defaults to true
+  display: false // Set false to hide this section, defaults to true
 };
 
 // Resume Section
@@ -372,15 +408,15 @@ const contactInfo = {
   title: emoji("Contact Me ☎️"),
   subtitle:
     "Discuss a project or just want to say hi? My Inbox is open for all.",
-  number: "+92-0000000000",
-  email_address: "saadpasta70@gmail.com"
+  number: "+1-8328369584",
+  email_address: "galvis14306@gmail.com"
 };
 
 // Twitter Section
 
 const twitterDetails = {
   userName: "twitter", //Replace "twitter" with your twitter username without @
-  display: true // Set true to display this section, defaults to false
+  display: false // Set true to display this section, defaults to false
 };
 
 const isHireable = false; // Set false if you are not looking for a job. Also isHireable will be display as Open for opportunities: Yes/No in the GitHub footer
