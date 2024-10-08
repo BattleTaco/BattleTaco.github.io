@@ -26,7 +26,7 @@ const greeting = {
   subTitle: emoji(
     "I'm a Data Scientist specializing in AI/ML and statistics 📊 with experience in building deep learning models using Python, TensorFlow, and PyTorch. Passionate about creating data-driven solutions, especially in healthcare and computer vision 🚀."
   ),
-   resumeLink: resumePDF, // Set to empty to hide the button
+  resumeLink: resumePDF, // Set to empty to hide the button
   displayGreeting: true // Set false to hide this section, defaults to true
 };
 
@@ -49,14 +49,24 @@ const socialMediaLinks = {
 
 const skillsSection = {
   title: "What I do",
-  subTitle: "PASSIONATE DATA SCIENTIST & MACHINE LEARNING ENGINEER DRIVEN BY INNOVATIVE SOLUTIONS",
+  subTitle:
+    "PASSIONATE DATA SCIENTIST & MACHINE LEARNING ENGINEER DRIVEN BY INNOVATIVE SOLUTIONS",
   skills: [
-    emoji("⚡ Build and optimize machine learning models for predictive analysis and decision-making"),
-    emoji("⚡ Develop deep learning solutions for computer vision, NLP, and healthcare applications"),
-    emoji("⚡ Leverage data science to drive insights, using tools like TensorFlow, PyTorch, and scikit-learn"),
-    emoji("⚡ Deploy scalable AI/ML models on cloud platforms like AWS and Google Cloud"),
-    emoji("⚡ Collaborate on end-to-end data pipelines and model deployment with a focus on real-time performance")
-
+    emoji(
+      "⚡ Build and optimize machine learning models for predictive analysis and decision-making"
+    ),
+    emoji(
+      "⚡ Develop deep learning solutions for computer vision, NLP, and healthcare applications"
+    ),
+    emoji(
+      "⚡ Leverage data science to drive insights, using tools like TensorFlow, PyTorch, and scikit-learn"
+    ),
+    emoji(
+      "⚡ Deploy scalable AI/ML models on cloud platforms like AWS and Google Cloud"
+    ),
+    emoji(
+      "⚡ Collaborate on end-to-end data pipelines and model deployment with a focus on real-time performance"
+    )
   ],
 
   /* Make Sure to include correct Font Awesome Classname to view your icon
@@ -143,7 +153,7 @@ const educationInfo = {
         "Pursuing advanced courses in Machine Learning, Artificial Intelligence, Algorithm Design, Database Systems, and High-Performance Computing.",
         "Building a foundation in scalable and efficient algorithm design, advanced database systems, and the deployment of large-scale data processing solutions.",
         "Exposure to cutting-edge research and development in areas such as distributed systems, advanced algorithms, and AI, all from a globally recognized institution."
-      ]    
+      ]
     },
     {
       schoolName: "University of Minnesota - Twin Cities",
@@ -167,7 +177,7 @@ const techStack = {
   experience: [
     {
       Stack: "Machine Learning & Predictive Modeling",
-      progressPercentage: "90%" 
+      progressPercentage: "90%"
     },
     {
       Stack: "Deep Learning (TensorFlow, PyTorch)",
@@ -188,7 +198,6 @@ const techStack = {
   ],
   displayCodersrank: false // Set to true if you're displaying Codersrank badges
 };
-
 
 // Work experience section
 
@@ -232,7 +241,7 @@ const workExperiences = {
         "Conducted detailed statistical analyses to identify patterns and insights, providing actionable data to drive business outcomes.",
         "Collaborated with a multidisciplinary team to develop data pipelines and automate the delivery of performance metrics in real-time.",
         "Worked on integrating predictive analytics into existing business processes, leading to more efficient resource allocation and improved decision-making."
-      ]      
+      ]
     }
   ]
 };

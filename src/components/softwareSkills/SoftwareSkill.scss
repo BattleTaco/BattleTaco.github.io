@@ -17,7 +17,8 @@
 }
 
 .software-skill-inline > i, /* FontAwesome icons */
-.software-skill-inline > img { /* Custom SVG icons */
+.software-skill-inline > img {
+  /* Custom SVG icons */
   font-size: 3rem; /* Ensure both icons have the same base size */
   color: $subTitle;
   transition: all 0.3s ease-in-out;
@@ -27,7 +28,9 @@
 .software-skill-inline > img:hover {
   color: $skillsColor; /* Ensure both FontAwesome and SVG icons have the same hover color */
   transform: scale(1.1); /* Apply the same zoom effect on hover */
-  filter: drop-shadow(0 0 10px $skillsColor); /* Glowing effect with the same color */
+  filter: drop-shadow(
+    0 0 10px $skillsColor
+  ); /* Glowing effect with the same color */
 }
 
 .software-skill-inline > p {
