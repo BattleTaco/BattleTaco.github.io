@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/static/css/main.60814986.css",
-    "main.js": "/static/js/main.0cc50d5c.js",
+    "main.js": "/static/js/main.9b46a533.js",
     "static/css/487.bb36206c.chunk.css": "/static/css/487.bb36206c.chunk.css",
     "static/js/487.c3d376c5.chunk.js": "/static/js/487.c3d376c5.chunk.js",
     "static/css/990.c6a7ee28.chunk.css": "/static/css/990.c6a7ee28.chunk.css",
-    "static/js/990.8db88a8a.chunk.js": "/static/js/990.8db88a8a.chunk.js",
+    "static/js/990.d9eb4577.chunk.js": "/static/js/990.d9eb4577.chunk.js",
     "static/media/Montserrat-Regular.ttf": "/static/media/Montserrat-Regular.3cd786652b8a2e9d41f2.ttf",
-    "static/media/resume.pdf": "/static/media/resume.f0f733dd3cd732b39262.pdf",
+    "static/media/resume.pdf": "/static/media/resume.3938e1cc282ef5d02980.pdf",
     "static/media/Agustina.woff": "/static/media/Agustina.eb0c59dda4cc308cba96.woff",
     "static/media/manOnTable.svg": "/static/media/manOnTable.8f117eb207e57ed8f89d67d595aceb45.svg",
     "static/media/donaldson.jpg": "/static/media/donaldson.154e2243bfc3d8bf7619.jpg",
@@ -32,14 +32,14 @@
     "static/media/pandas.svg": "/static/media/pandas.26ff1c0502d192cd5b4766b6a13d643c.svg",
     "static/media/tensorflow.svg": "/static/media/tensorflow.2c1801bb18ea8780cb4a759879fe54ce.svg",
     "main.60814986.css.map": "/static/css/main.60814986.css.map",
-    "main.0cc50d5c.js.map": "/static/js/main.0cc50d5c.js.map",
+    "main.9b46a533.js.map": "/static/js/main.9b46a533.js.map",
     "487.bb36206c.chunk.css.map": "/static/css/487.bb36206c.chunk.css.map",
     "487.c3d376c5.chunk.js.map": "/static/js/487.c3d376c5.chunk.js.map",
     "990.c6a7ee28.chunk.css.map": "/static/css/990.c6a7ee28.chunk.css.map",
-    "990.8db88a8a.chunk.js.map": "/static/js/990.8db88a8a.chunk.js.map"
+    "990.d9eb4577.chunk.js.map": "/static/js/990.d9eb4577.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.60814986.css",
-    "static/js/main.0cc50d5c.js"
+    "static/js/main.9b46a533.js"
   ]
 }
