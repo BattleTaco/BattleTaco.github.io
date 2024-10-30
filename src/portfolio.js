@@ -4,7 +4,6 @@
 
 import emoji from "react-easy-emoji";
 import splashAnimation from "./assets/lottie/splashAnimation"; // Rename to your file name for custom animation
-import resumePDF from "./containers/resume/resume.pdf";
 
 // Splash Screen
 
@@ -22,11 +21,11 @@ const illustration = {
 
 const greeting = {
   username: "Michael Ramirez",
-  title: "Hi all, I'm Michael",
+  title: "Hi y'all, I'm Michael!",
   subTitle: emoji(
     "I'm a Data Scientist specializing in AI/ML and statistics 📊 with experience in building deep learning models using Python, TensorFlow, and PyTorch. Passionate about creating data-driven solutions, especially in healthcare and computer vision 🚀."
   ),
-  resumeLink: resumePDF, // Set to empty to hide the button
+  resumeLink: "./resume.pdf", // Set to empty to hide the button
   displayGreeting: true // Set false to hide this section, defaults to true
 };
 
@@ -354,22 +353,16 @@ const blogSection = {
   title: "Blogs",
   subtitle:
     "With Love for Developing cool stuff, I love to write and teach others what I have learnt.",
-  displayMediumBlogs: "true", // Set true to display fetched medium blogs instead of hardcoded ones
+  displayMediumBlogs: "false", // Set true to display fetched medium blogs instead of hardcoded ones
   blogs: [
     {
-      url: "https://blog.usejournal.com/create-a-google-assistant-action-and-win-a-google-t-shirt-and-cloud-credits-4a8d86d76eae",
-      title: "Win a Google Assistant Tshirt and $200 in Google Cloud Credits",
+      url: "https://medium.com/@Michael_Ram/ethics-in-ai-1-6bccc89006c6",
+      title: "Ethics in AI #1",
       description:
-        "Do you want to win $200 and Google Assistant Tshirt by creating a Google Assistant Action in less then 30 min?"
-    },
-    {
-      url: "https://medium.com/@saadpasta/why-react-is-the-best-5a97563f423e",
-      title: "Why REACT is The Best?",
-      description:
-        "React is a JavaScript library for building User Interface. It is maintained by Facebook and a community of individual developers and companies."
+        "In Ethics in AI #1, I explore the critical need for ethical oversight in AI, discussing issues like biased policing and ethical data collection as AI technology rapidly advances."
     }
   ],
-  display: false // Set false to hide this section, defaults to true
+  display: true // Set false to hide this section, defaults to true
 };
 
 // Talks Sections
