@@ -1,0 +1,510 @@
+@import "../../_globalColor";
+
+.research-main {
+  width: 90%;
+  padding: 20px 10px;
+  margin: 0px auto;
+  margin-top: 2rem;
+}
+
+.research-heading {
+  font-size: 56px;
+  font-weight: 400;
+}
+
+.research-subtitle {
+  text-transform: uppercase;
+  font-size: 16px;
+  letter-spacing: 1.5px;
+  margin-bottom: 2rem;
+}
+
+.research-cards-div {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* Featured research card — grand layout */
+.research-card-featured {
+  position: relative;
+  background: linear-gradient(135deg, $lightBackground2 0%, #f8f6ff 100%);
+  border-radius: 16px;
+  border: 2px solid $buttonColor;
+  box-shadow: $lightBoxShadowDark 0px 10px 30px -15px,
+    0 0 20px rgba(85, 25, 139, 0.08);
+  padding: 2.5rem 3rem;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.research-card-featured::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 5px;
+  height: 100%;
+  background: linear-gradient(180deg, $buttonColor, $skillsColor, #ffc107);
+  border-radius: 16px 0 0 16px;
+}
+
+.research-card-featured:hover {
+  box-shadow: $lightBoxShadowDark 0px 20px 30px -10px,
+    0 0 30px rgba(85, 25, 139, 0.12);
+  transform: translateY(-4px);
+}
+
+.research-card-featured-dark {
+  position: relative;
+  background: linear-gradient(
+    135deg,
+    $darkBackground 0%,
+    rgba(85, 25, 139, 0.1) 100%
+  );
+  border-radius: 16px;
+  border: 2px solid rgba(255, 193, 7, 0.3);
+  box-shadow: 0px 10px 30px -15px rgba(0, 0, 0, 0.5),
+    0 0 20px rgba(255, 193, 7, 0.05);
+  padding: 2.5rem 3rem;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.research-card-featured-dark::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 5px;
+  height: 100%;
+  background: linear-gradient(180deg, $buttonHover, $skillsColor, #ffc107);
+  border-radius: 16px 0 0 16px;
+}
+
+.research-card-featured-dark:hover {
+  box-shadow: 0px 20px 30px -10px rgba(0, 0, 0, 0.7),
+    0 0 30px rgba(255, 193, 7, 0.1);
+  transform: translateY(-4px);
+}
+
+/* Status badge */
+.research-status-badge {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.75rem;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  padding: 0.35rem 0.85rem;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.in-progress-badge {
+  background-color: rgba(255, 193, 7, 0.15);
+  color: #d4a017;
+  border: 1px solid rgba(255, 193, 7, 0.3);
+}
+
+.pulse-dot {
+  width: 8px;
+  height: 8px;
+  background-color: #ffc107;
+  border-radius: 50%;
+  display: inline-block;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.4;
+    transform: scale(0.8);
+  }
+}
+
+.research-card-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.research-card-icon-featured {
+  font-size: 2.5rem;
+  color: $skillsColor;
+  min-width: 3rem;
+  text-align: center;
+  margin-top: 0.25rem;
+}
+
+.research-card-title-area {
+  flex: 1;
+}
+
+.research-card-title-featured {
+  font-size: 26px;
+  font-weight: 700;
+  color: $textColor;
+  margin: 0 0 0.35rem 0;
+  line-height: 1.3;
+}
+
+.research-card-meta {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.research-card-date {
+  font-size: 14px;
+  color: $subTitle;
+  font-weight: 600;
+}
+
+.research-card-association {
+  font-size: 14px;
+  color: $skillsColor;
+  font-weight: 600;
+}
+
+.research-card-association::before {
+  content: "|";
+  margin-right: 1rem;
+  color: $subTitle;
+  font-weight: 400;
+}
+
+.research-card-desc-featured {
+  font-size: 17px;
+  color: $cardSubtitle;
+  line-height: 1.8;
+  margin: 1.25rem 0;
+}
+
+.research-card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1.25rem;
+}
+
+.research-tag {
+  background: linear-gradient(135deg, $buttonColor, $skillsColor);
+  color: $lightBackground1;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 0.35rem 0.9rem;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  transition: all 0.2s ease;
+}
+
+.research-tag:hover {
+  transform: scale(1.05);
+  box-shadow: 0 2px 8px rgba(85, 25, 139, 0.4);
+}
+
+.research-tag-dark {
+  background: linear-gradient(135deg, $buttonHover, $skillsColor);
+}
+
+/* GitHub link button */
+.research-card-actions {
+  margin-top: 1.75rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.research-github-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 15px;
+  font-weight: 600;
+  color: $lightBackground1;
+  background: linear-gradient(135deg, $buttonColor, $skillsColor);
+  padding: 0.65rem 1.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.research-github-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(85, 25, 139, 0.35);
+}
+
+.research-github-btn-disabled {
+  opacity: 0.6;
+  cursor: default;
+  background: linear-gradient(135deg, #888, #aaa);
+}
+
+.research-github-btn-disabled:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+.research-github-btn-dark {
+  background: linear-gradient(135deg, $buttonHover, $skillsColor);
+}
+
+.research-github-btn-dark.research-github-btn-disabled {
+  background: linear-gradient(135deg, #555, #777);
+}
+
+/* Research Phases */
+.research-phases {
+  margin-top: 1.75rem;
+}
+
+.research-section-label {
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: $buttonColor;
+  margin-bottom: 1rem;
+}
+
+.dark-label {
+  color: $skillsColor;
+}
+
+.research-phases-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.25rem;
+}
+
+.research-phase-card {
+  background: rgba(85, 25, 139, 0.04);
+  border: 1px solid rgba(85, 25, 139, 0.12);
+  border-radius: 10px;
+  padding: 1.25rem 1.5rem;
+  transition: all 0.2s ease;
+}
+
+.research-phase-card:hover {
+  border-color: rgba(85, 25, 139, 0.25);
+  background: rgba(85, 25, 139, 0.07);
+}
+
+.research-phase-card-dark {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.research-phase-card-dark:hover {
+  background: rgba(255, 255, 255, 0.07);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.research-phase-number {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: $skillsColor;
+  margin-bottom: 0.5rem;
+}
+
+.research-phase-title {
+  font-size: 17px;
+  font-weight: 700;
+  color: $textColor;
+  margin: 0 0 0.5rem 0;
+}
+
+.research-phase-card-dark .research-phase-title {
+  color: $textColorDark;
+}
+
+.research-phase-desc {
+  font-size: 14px;
+  color: $cardSubtitle;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.research-phase-card-dark .research-phase-desc {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* Research Questions */
+.research-questions {
+  margin-top: 1.75rem;
+}
+
+.research-questions-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.research-question-item {
+  font-size: 15px;
+  color: $cardSubtitle;
+  line-height: 1.6;
+  padding: 0.75rem 1rem 0.75rem 2.25rem;
+  position: relative;
+  background: rgba(85, 25, 139, 0.03);
+  border-radius: 8px;
+  border-left: 3px solid $skillsColor;
+}
+
+.research-question-item::before {
+  content: "?";
+  position: absolute;
+  left: 0.75rem;
+  top: 0.75rem;
+  font-weight: 700;
+  color: $skillsColor;
+  font-size: 14px;
+}
+
+.dark-question {
+  color: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+/* Motivation */
+.research-motivation {
+  margin-top: 1.75rem;
+  padding: 1.25rem 1.5rem;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 107, 107, 0.06),
+    rgba(85, 25, 139, 0.06)
+  );
+  border-radius: 10px;
+  border: 1px solid rgba(255, 107, 107, 0.15);
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.research-motivation-dark {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 107, 107, 0.08),
+    rgba(85, 25, 139, 0.08)
+  );
+  border-color: rgba(255, 107, 107, 0.2);
+}
+
+.research-motivation-icon {
+  color: #ff6b6b;
+  font-size: 1.25rem;
+  margin-top: 0.15rem;
+  flex-shrink: 0;
+}
+
+.research-motivation-text {
+  font-size: 15px;
+  font-style: italic;
+  color: $cardSubtitle;
+  line-height: 1.7;
+  margin: 0;
+}
+
+.research-motivation-dark .research-motivation-text {
+  color: rgba(255, 255, 255, 0.65);
+}
+
+/* Dark mode text overrides */
+.research-card-featured-dark .research-card-title-featured {
+  color: $textColorDark;
+}
+
+.research-card-featured-dark .research-card-desc-featured {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.research-card-featured-dark .research-card-date {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.research-card-featured-dark .research-card-association::before {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.research-card-featured-dark .research-card-actions {
+  border-top-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Media Query */
+@media (max-width: 1380px) {
+  .research-heading {
+    font-size: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .research-heading {
+    font-size: 30px;
+    text-align: center;
+  }
+  .research-subtitle {
+    text-align: center;
+  }
+  .research-card-featured,
+  .research-card-featured-dark {
+    padding: 1.5rem;
+  }
+  .research-card-header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .research-card-title-featured {
+    font-size: 22px;
+    text-align: center;
+  }
+  .research-card-meta {
+    justify-content: center;
+  }
+  .research-card-desc-featured {
+    text-align: center;
+  }
+  .research-card-tags {
+    justify-content: center;
+  }
+  .research-status-badge {
+    position: static;
+    display: inline-flex;
+    margin-bottom: 1rem;
+  }
+  .research-card-actions {
+    text-align: center;
+  }
+  .research-phases-grid {
+    grid-template-columns: 1fr;
+  }
+  .research-phase-card {
+    text-align: center;
+  }
+  .research-question-item {
+    text-align: left;
+  }
+  .research-motivation {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
