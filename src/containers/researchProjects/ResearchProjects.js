@@ -205,8 +205,7 @@ export default function ResearchProjects() {
                               : "research-github-btn research-github-btn-disabled"
                           }
                         >
-                          <i className="fab fa-github"></i> GitHub - Coming
-                          Soon
+                          <i className="fab fa-github"></i> GitHub - Coming Soon
                         </span>
                       )}
                     </div>

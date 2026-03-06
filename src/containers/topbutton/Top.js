@@ -6,8 +6,7 @@ export default function Top() {
 
   const handleScroll = useCallback(() => {
     const scrolled =
-      document.body.scrollTop > 20 ||
-      document.documentElement.scrollTop > 20;
+      document.body.scrollTop > 20 || document.documentElement.scrollTop > 20;
     setVisible(scrolled);
   }, []);
 

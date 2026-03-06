@@ -14,11 +14,11 @@ import "./Main.scss";
 // Lazy-load below-the-fold sections for faster initial page load
 const Education = lazy(() => import("./education/Education"));
 const WorkExperience = lazy(() => import("./workExperience/WorkExperience"));
-const CompletedProjects = lazy(() =>
-  import("./completedProjects/CompletedProjects")
+const CompletedProjects = lazy(
+  () => import("./completedProjects/CompletedProjects")
 );
-const ResearchProjects = lazy(() =>
-  import("./researchProjects/ResearchProjects")
+const ResearchProjects = lazy(
+  () => import("./researchProjects/ResearchProjects")
 );
 const Projects = lazy(() => import("./projects/Projects"));
 const StartupProject = lazy(() => import("./StartupProjects/StartupProject"));

@@ -8,8 +8,18 @@ export default function socialMedia() {
   }
 
   const links = [
-    {key: "github", className: "github", icon: "fab fa-github", label: "GitHub"},
-    {key: "linkedin", className: "linkedin", icon: "fab fa-linkedin-in", label: "LinkedIn"},
+    {
+      key: "github",
+      className: "github",
+      icon: "fab fa-github",
+      label: "GitHub"
+    },
+    {
+      key: "linkedin",
+      className: "linkedin",
+      icon: "fab fa-linkedin-in",
+      label: "LinkedIn"
+    },
     {
       key: "gmail",
       className: "google",
@@ -17,11 +27,36 @@ export default function socialMedia() {
       label: "Email",
       href: `mailto:${socialMediaLinks.gmail}`
     },
-    {key: "gitlab", className: "gitlab", icon: "fab fa-gitlab", label: "GitLab"},
-    {key: "facebook", className: "facebook", icon: "fab fa-facebook-f", label: "Facebook"},
-    {key: "instagram", className: "instagram", icon: "fab fa-instagram", label: "Instagram"},
-    {key: "twitter", className: "twitter", icon: "fab fa-twitter", label: "Twitter"},
-    {key: "medium", className: "medium", icon: "fab fa-medium", label: "Medium"},
+    {
+      key: "gitlab",
+      className: "gitlab",
+      icon: "fab fa-gitlab",
+      label: "GitLab"
+    },
+    {
+      key: "facebook",
+      className: "facebook",
+      icon: "fab fa-facebook-f",
+      label: "Facebook"
+    },
+    {
+      key: "instagram",
+      className: "instagram",
+      icon: "fab fa-instagram",
+      label: "Instagram"
+    },
+    {
+      key: "twitter",
+      className: "twitter",
+      icon: "fab fa-twitter",
+      label: "Twitter"
+    },
+    {
+      key: "medium",
+      className: "medium",
+      icon: "fab fa-medium",
+      label: "Medium"
+    },
     {
       key: "stackoverflow",
       className: "stack-overflow",

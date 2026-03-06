@@ -28,7 +28,7 @@ function TypingAnimation() {
       timeout = setTimeout(() => setIsDeleting(true), 2000);
     } else if (isDeleting && text === "") {
       setIsDeleting(false);
-      setRoleIndex((prev) => (prev + 1) % roles.length);
+      setRoleIndex(prev => (prev + 1) % roles.length);
     } else {
       const delta = isDeleting ? 30 : 60;
       timeout = setTimeout(() => {

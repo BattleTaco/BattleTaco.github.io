@@ -295,7 +295,8 @@ const completedProjects = {
     "COMPLETED ML PROJECTS THAT DEMONSTRATE PRODUCTION-QUALITY ENGINEERING",
   projects: [
     {
-      title: "Empirical Evaluation of Supervised and Unsupervised Learning Systems",
+      title:
+        "Empirical Evaluation of Supervised and Unsupervised Learning Systems",
       date: "Aug 2025 - Dec 2025",
       association: "Georgia Institute of Technology",
       description:

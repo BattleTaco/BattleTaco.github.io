@@ -18,9 +18,7 @@ export default function CompletedProjects() {
           <div>
             <h1
               className={
-                isDark
-                  ? "dark-mode projects-heading"
-                  : "projects-heading"
+                isDark ? "dark-mode projects-heading" : "projects-heading"
               }
             >
               {completedProjects.title}
@@ -45,9 +43,7 @@ export default function CompletedProjects() {
                   triggerOnce
                 >
                   <div
-                    className={
-                      isDark ? "project-card-dark" : "project-card"
-                    }
+                    className={isDark ? "project-card-dark" : "project-card"}
                   >
                     <span className="project-status-badge completed-badge">
                       Completed
@@ -59,9 +55,7 @@ export default function CompletedProjects() {
                         </div>
                       )}
                       <div className="project-card-title-area">
-                        <h3 className="project-card-title">
-                          {project.title}
-                        </h3>
+                        <h3 className="project-card-title">{project.title}</h3>
                         <div className="project-card-meta">
                           <span className="project-card-date">
                             {project.date}
