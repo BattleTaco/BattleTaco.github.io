@@ -5,6 +5,10 @@ env:
   REACT_APP_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This is automatically set by Github Actions
   USE_GITHUB_DATA: "true"
   MEDIUM_USERNAME: "Michael_Ram"
+  # Keeps create-react-app from inlining the webpack runtime into index.html.
+  # An inline <script> would be blocked by the `script-src 'self'` policy in
+  # public/index.html, which would break the page.
+  INLINE_RUNTIME_CHUNK: "false"
 on:
   workflow_dispatch:
   push:
@@ -13,28 +17,37 @@ on:
       - master
   schedule:
     - cron: "0 12 * * 1" # see https://docs.github.com/en/actions/reference/events-that-trigger-workflows#scheduled-events
-permissions:
-  contents: write # Required so the deploy step can push to the gh-pages branch
+
+# Deny everything by default, then grant the single scope the deploy needs at
+# the job level, so any job added later starts from zero.
+permissions: {}
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write # Required so the deploy step can push to the gh-pages branch
     steps:
+      # Third-party and first-party actions are pinned to a commit SHA rather
+      # than a tag: a tag can be moved to point at new code, a SHA cannot, so
+      # this is what stops a compromised action from silently running here.
+      # The trailing comment records which release each SHA corresponds to.
       - name: Checkout 🛎️
-        uses: actions/checkout@v4 # If you're using actions/checkout@v3 you must set persist-credentials to false in most cases for the deployment to work correctly.
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
         with:
           persist-credentials: false
 
       - name: Setup Node.js 🔧
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
         with:
           node-version: 22.x
 
       - name: Install and Build 🔧 # Build the Project
         run: |
-          npm install
+          npm ci
           npm run build
       - name: Deploy 🚀
-        uses: JamesIves/github-pages-deploy-action@v4
+        uses: JamesIves/github-pages-deploy-action@fa24774553152dd7873cd16ebd8d959b010c5445 # v4
         with:
           token: ${{ secrets.GITHUB_TOKEN }} # This is provided by GitHub.
           branch: gh-pages # The branch the action should deploy to.

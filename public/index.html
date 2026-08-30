@@ -28,10 +28,50 @@
     <meta name="msapplication-TileColor" content="#603cba">
     <meta name="theme-color" content="#6c63ff" />
 
-    <!-- Security headers (meta-based, for GitHub Pages) -->
-    <meta http-equiv="X-Content-Type-Options" content="nosniff">
-    <meta http-equiv="X-Frame-Options" content="DENY">
+    <!--
+      Security policy.
+
+      GitHub Pages serves static files and cannot set response headers, so the
+      only enforceable policy is what a <meta> tag can carry. Note that browsers
+      IGNORE these directives in meta-delivered CSP: frame-ancestors, sandbox,
+      report-uri and report-to. Clickjacking is therefore handled by
+      framebust.js below rather than here, and X-Frame-Options /
+      X-Content-Type-Options meta tags were removed because they are header-only
+      and did nothing but emit a console warning on every page load.
+
+      If a section that loads a third-party embed is ever re-enabled in
+      portfolio.js (the Twitter timeline is the one in the box), this policy has
+      to grow a matching frame-src/script-src entry or the embed will be blocked.
+
+      Origins allowed, and why each one is needed:
+        cdn.jsdelivr.net          Font Awesome stylesheet (SRI-pinned) + its webfonts
+        avatars.githubusercontent.com  avatar on the GitHub profile card
+        cdnjs.cloudflare.com      twemoji images that react-easy-emoji renders
+
+      'unsafe-inline' under style-src is the one real concession. React sets
+      inline style attributes and react-awesome-reveal injects <style> elements
+      at runtime, so a strict style policy blanks the page. Scripts stay strict,
+      which is where XSS actually bites.
+    -->
+    <meta http-equiv="Content-Security-Policy" content="
+      default-src 'self';
+      base-uri 'self';
+      object-src 'none';
+      frame-src 'none';
+      script-src 'self';
+      style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net;
+      font-src 'self' https://cdn.jsdelivr.net;
+      img-src 'self' data: https://avatars.githubusercontent.com https://cdnjs.cloudflare.com;
+      connect-src 'self';
+      manifest-src 'self';
+      worker-src 'self';
+      form-action 'none';
+      upgrade-insecure-requests
+    ">
     <meta name="referrer" content="strict-origin-when-cross-origin">
+
+    <!-- Clickjacking fallback; see the file for why a header is not an option. -->
+    <script src="%PUBLIC_URL%/framebust.js"></script>
 
     <!-- Customize icons -->
     <link rel="icon" type="image/png" sizes="32x32" href="%PUBLIC_URL%/favicon-32x32.png?v8=qAJ44G5Bm7">

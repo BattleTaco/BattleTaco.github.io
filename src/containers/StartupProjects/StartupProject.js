@@ -3,16 +3,9 @@ import "./StartupProjects.scss";
 import {bigProjects} from "../../portfolio";
 import {Fade} from "react-awesome-reveal";
 import StyleContext from "../../contexts/StyleContext";
+import {openUrlInNewTab} from "../../utils";
 
 export default function StartupProject() {
-  function openUrlInNewTab(url) {
-    if (!url) {
-      return;
-    }
-    var win = window.open(url, "_blank");
-    win.focus();
-  }
-
   const {isDark} = useContext(StyleContext);
   if (!bigProjects.display) {
     return null;

@@ -1,7 +1,7 @@
 import React from "react";
 import "./GithubRepoCard.scss";
 import {Fade} from "react-awesome-reveal";
-import {formatFileSizeDisplay} from "../../utils";
+import {formatFileSizeDisplay, openUrlInNewTab} from "../../utils";
 
 export default function GithubRepoCard({repo, isDark}) {
   // `stargazerCount` is what fetch.js requests now; the nested `stargazers`
@@ -9,15 +9,6 @@ export default function GithubRepoCard({repo, isDark}) {
   // renders instead of blowing up.
   const starCount =
     repo.node.stargazerCount ?? repo.node.stargazers?.totalCount;
-
-  function openUrlInNewTab(url, name) {
-    if (!url) {
-      console.log(`URL in ${name} is undefined`);
-      return;
-    }
-    var win = window.open(url, "_blank");
-    win.focus();
-  }
 
   return (
     <Fade direction="up" duration={1000} triggerOnce>

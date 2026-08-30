@@ -1,0 +1,31 @@
+version: 2
+
+# The workflows pin actions to commit SHAs, which stops a moved tag from
+# silently changing what runs — but it also means nothing updates on its own.
+# Dependabot is the other half of that trade: it opens PRs that bump the pinned
+# SHA when a new release lands, so pinning does not quietly rot into running
+# months-old actions with known holes.
+updates:
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    commit-message:
+      prefix: "ci"
+
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 5
+    commit-message:
+      prefix: "deps"
+    groups:
+      # The react-scripts toolchain pulls in a large transitive tree; grouping
+      # keeps a routine patch bump from arriving as a dozen separate PRs.
+      build-toolchain:
+        patterns:
+          - "*"
+        update-types:
+          - "minor"
+          - "patch"

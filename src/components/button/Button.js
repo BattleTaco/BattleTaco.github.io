@@ -4,7 +4,13 @@ import "./Button.scss";
 export default function Button({text, className, href, newTab}) {
   return (
     <div className={className}>
-      <a className="main-button" href={href} target={newTab && "_blank"}>
+      <a
+        className="main-button"
+        href={href}
+        target={newTab ? "_blank" : undefined}
+        // Keeps the opened page from reaching back through window.opener.
+        rel={newTab ? "noopener noreferrer" : undefined}
+      >
         {text}
       </a>
     </div>
