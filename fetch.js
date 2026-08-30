@@ -8,9 +8,11 @@ const GITHUB_USERNAME = process.env.GITHUB_USERNAME;
 const USE_GITHUB_DATA = process.env.USE_GITHUB_DATA;
 const MEDIUM_USERNAME = process.env.MEDIUM_USERNAME;
 
-// Validate username contains only safe characters (alphanumeric, hyphens)
+// Validate username contains only safe characters (alphanumeric, hyphens,
+// underscores). Medium handles allow underscores; dots stay disallowed so a
+// username can never introduce path traversal into the request URL.
 function isValidUsername(username) {
-  return /^[a-zA-Z0-9-]+$/.test(username);
+  return /^[a-zA-Z0-9_-]+$/.test(username);
 }
 
 const ERR = {
@@ -33,8 +35,8 @@ if (USE_GITHUB_DATA === "true") {
   }
 
   if (!GITHUB_TOKEN) {
-    throw new Error(
-      "REACT_APP_GITHUB_TOKEN is not set. Please add a valid GitHub token to your .env file."
+    console.warn(
+      "REACT_APP_GITHUB_TOKEN is not set; skipping GitHub profile fetch."
     );
   }
 
@@ -89,7 +91,9 @@ if (USE_GITHUB_DATA === "true") {
 
     console.log(`statusCode: ${res.statusCode}`);
     if (res.statusCode !== 200) {
-      throw new Error(ERR.requestFailed);
+      console.warn(ERR.requestFailed);
+      res.resume();
+      return;
     }
 
     res.on("data", d => {
@@ -104,7 +108,7 @@ if (USE_GITHUB_DATA === "true") {
   });
 
   req.on("error", error => {
-    throw error;
+    console.warn(`GitHub fetch skipped: ${error.message}`);
   });
 
   req.write(data);
@@ -131,7 +135,9 @@ if (MEDIUM_USERNAME !== undefined && MEDIUM_USERNAME !== "") {
 
     console.log(`statusCode: ${res.statusCode}`);
     if (res.statusCode !== 200) {
-      throw new Error(ERR.requestMediumFailed);
+      console.warn(ERR.requestFailedMedium);
+      res.resume();
+      return;
     }
 
     res.on("data", d => {
@@ -146,7 +152,7 @@ if (MEDIUM_USERNAME !== undefined && MEDIUM_USERNAME !== "") {
   });
 
   req.on("error", error => {
-    throw error;
+    console.warn(`Medium fetch skipped: ${error.message}`);
   });
 
   req.end();
