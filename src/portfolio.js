@@ -185,10 +185,9 @@ const workExperiences = {
         "Develop and evaluate the license plate OCR and license plate state classification heads of the production license plate recognition model, covering head-level training, evaluation protocol, and error analysis.",
         "Diagnose customer-reported misreads by isolating character-confusion patterns and unfamiliar plate fonts, tracing them to distribution shift in production data the deployed model was never trained against.",
         "Drove edge-case plate categories from roughly 100% error on 100-plate sampled audits down to under 10% through targeted dataset curation and fine-tuning, measured by per-category F1 on held-out samples.",
-        "Monitor OCR and state prediction accuracy nationwide across all U.S. states and day/night capture conditions, investigating any category that drops below threshold and driving retraining to restore it.",
-        "Benchmark the production model against third-party OCR and image-quality models from Hugging Face, running multiple architectures in parallel to surface model weaknesses and validate training data quality.",
-        "Run and monitor training pipelines through the platform team's Prefect orchestration workflows, tracking experiment progress and diagnosing failed runs, and partner with the ML tooling team on workflow improvements.",
-        "Work on edge deployment and inference optimization for real-time video analytics."
+        "Monitor OCR and state prediction accuracy nationwide across all U.S. states and day/night capture conditions, investigating any category that drops below threshold and driving retraining.",
+        "Benchmark the production model against third-party OCR and image-quality models from Hugging Face to surface weaknesses and validate training data quality.",
+        "Run training pipelines through the platform team's Prefect orchestration workflows, and work on edge deployment and inference optimization for real-time video analytics."
       ]
     },
     {
@@ -202,8 +201,7 @@ const workExperiences = {
         "Built and maintained the data lake and ingestion pipelines that consolidated fragmented clinical and device data into a single analysis-ready source.",
         "Produced regulatory-grade statistical reporting for clinical trial research, replacing manual assembly of fragmented datasets.",
         "Built and fine-tuned LLM-powered clinical copilots integrated with SQL pipelines and prompt engineering workflows, cutting provider review time for patient summaries and survey insights.",
-        "Built scalable EHR data pipelines using JSON, HL7, and FHIR in Mirth Connect, enabling real-time maternal care monitoring across multiple healthcare systems.",
-        "Architected and deployed HIPAA-compliant LLM APIs on AWS with FastAPI, Celery, and secure logging, backed by a custom QUEST LLM evaluation framework."
+        "Built scalable EHR data pipelines using JSON, HL7, and FHIR in Mirth Connect, and deployed HIPAA-compliant LLM APIs on AWS with FastAPI, Celery, and a custom QUEST evaluation framework."
       ]
     },
     {
@@ -215,7 +213,6 @@ const workExperiences = {
       descBullets: [
         "Improved predictive accuracy in maternal and fetal heartbeat monitoring by applying EC57 research standards to deep learning architectures in Python and PyTorch.",
         "Designed and deployed a cloud-based AWS platform (EC2, S3, Lambda) that supported distributed labeling teams and improved labeling throughput.",
-        "Built automated Python and Pandas preprocessing with regex-based extraction, speeding up the data pipeline and reducing false positives downstream.",
         "Shortened model retraining cycles by implementing MLOps practices, dataset versioning, and experiment tracking.",
         "Collaborated with clinicians, engineers, and product managers to translate medical research into deployable models."
       ]

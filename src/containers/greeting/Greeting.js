@@ -9,10 +9,10 @@ import {illustration, greeting} from "../../portfolio";
 import StyleContext from "../../contexts/StyleContext";
 
 const roles = [
-  "ML Engineer II @ Flock Safety",
-  "M.S. CS @ Georgia Tech",
-  "Deep Learning & PyTorch",
-  "MLOps & Production Systems"
+  "ML Engineer, Multimodal ML @ Flock Safety",
+  "Production Computer Vision at Scale",
+  "M.S. CS, Machine Learning @ Georgia Tech",
+  "Independent Research You Can Reproduce"
 ];
 
 function TypingAnimation() {
