@@ -3,6 +3,7 @@ import "./ResearchProjects.scss";
 import {researchProjects} from "../../portfolio";
 import {Fade} from "react-awesome-reveal";
 import StyleContext from "../../contexts/StyleContext";
+import ResultChart from "../../components/resultChart/ResultChart";
 
 export default function ResearchProjects() {
   const {isDark} = useContext(StyleContext);
@@ -80,6 +81,9 @@ export default function ResearchProjects() {
                     <p className="research-card-desc-featured">
                       {project.overview}
                     </p>
+
+                    {/* Measured result */}
+                    {project.chart && <ResultChart chart={project.chart} />}
 
                     {/* Research Phases */}
                     {project.phases && project.phases.length > 0 && (

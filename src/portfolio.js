@@ -22,7 +22,7 @@ const greeting = {
   username: "Michael Ramirez",
   title: "Hi y'all, I'm Michael!",
   subTitle:
-    "Machine Learning Engineer who loves building and shipping production AI systems. I work on real-world ML infrastructure and models at Flock Safety while pursuing my M.S. in Computer Science (Machine Learning) at Georgia Tech. Day to day, I'm hands-on across the full ML lifecycle: data engineering, experimentation, model deployment, monitoring, and continuous improvement.",
+    "Machine Learning Engineer at Flock Safety, working on the OCR and state classification task heads of a multi-task license plate recognition model deployed nationwide. Most of my job is figuring out why a model fails on the plates it has never seen, then closing that gap with better data. I also run independent research on the side, and I care more about results that reproduce than results that impress.",
   resumeLink: "./resume.pdf", // Set to empty to hide the button
   displayGreeting: true // Set false to hide this section, defaults to true
 };
@@ -31,11 +31,9 @@ const greeting = {
 
 const socialMediaLinks = {
   github: "https://github.com/BattleTaco",
-  linkedin: "https://www.linkedin.com/in/michael-ramirez-ab011a1b1/",
+  linkedin: "https://www.linkedin.com/in/michael-ramirez-ml/",
   gmail: "galvis14306@gmail.com",
-  gitlab: "https://gitlab.com/BattleTaco1",
-  instagram: "https://instagram.com/ramirez_m.r",
-  medium: "https://medium.com/BattleTaco",
+  medium: "https://medium.com/@Michael_Ram",
   stackoverflow: "https://stackoverflow.com/users/13587150/battletaco",
   kaggle: "https://www.kaggle.com/battletaco",
   // To customize icons and social links, tweak src/components/SocialMedia
@@ -47,14 +45,14 @@ const socialMediaLinks = {
 const skillsSection = {
   title: "What I Do",
   subTitle:
-    "ML ENGINEER WHO BUILDS AND DEPLOYS PRODUCTION AI SYSTEMS THAT CREATE REAL-WORLD IMPACT",
+    "PRODUCTION COMPUTER VISION, AND RESEARCH THAT REPORTS WHAT ACTUALLY HAPPENED",
   skills: [
-    "Build end-to-end ML infrastructure, from data engineering and experimentation all the way through model deployment, monitoring, and iteration",
-    "Develop and fine-tune deep learning models in PyTorch for supervised learning, computer vision, and time-series problems",
-    "Architect scalable MLOps pipelines with Docker, AWS, FastAPI, and CI/CD for reliable model serving",
-    "Apply reinforcement learning techniques including policy optimization, simulation environments, and agent training",
-    "Integrate LLMs and applied AI through prompt engineering, retrieval systems, and domain-specific solutions",
-    "Build reliable data pipelines and turn model outputs into actionable insights"
+    "Own model quality for OCR and state classification heads on a production vision model, from head-level training through evaluation protocol and error analysis",
+    "Hunt down failure modes: character-confusion patterns, unfamiliar fonts, day and night capture, and the distribution shift that production data quietly introduces",
+    "Curate and repair training data, then fine-tune against it, which is usually where the real accuracy lives",
+    "Benchmark against third-party OCR and image-quality models to find weaknesses in our own",
+    "Build and monitor training pipelines through orchestration workflows, and partner with platform and tooling teams",
+    "Run independent research end to end: falsifiable hypotheses, physics or zero-parameter baselines, and every number reproducible from committed artifacts"
   ],
 
   /* Make Sure to include correct Font Awesome Classname to view your icon
@@ -139,13 +137,13 @@ const educationInfo = {
       logo: require("./assets/images/Georgia-Tech-Logo-PNG-Picture1.png"),
       subHeader:
         "Master of Science in Computer Science, Machine Learning Specialization",
-      duration: "January 2025 - May 2027",
-      desc: "Pursuing my M.S. in CS at Georgia Tech, one of the top 10 CS programs globally. Specializing in Machine Learning with coursework in advanced ML algorithms, reinforcement learning, computer vision, and large-scale AI systems.",
+      duration: "January 2025 - Expected May 2028",
+      desc: "Pursuing my M.S. in CS at Georgia Tech while working full time, one course at a time. Specializing in Machine Learning.",
       descBullets: [
-        "Specializing in Machine Learning with coursework in Supervised/Unsupervised Learning, Reinforcement Learning, and AI systems design.",
-        "Running rigorous empirical evaluations of ML systems, analyzing bias-variance tradeoffs, learning curves, and model diagnostics across decision trees, ensemble methods, neural networks, and dimensionality reduction techniques.",
-        "Building expertise in scalable algorithm design, distributed systems, and production ML deployment pipelines.",
-        "Balancing full-time ML engineering work at Flock Safety with graduate research."
+        "Completed: Deep Learning, Reinforcement Learning, Machine Learning, Machine Learning for Trading, and AI Ethics.",
+        "Coursework has been heavy on empirical evaluation: bias-variance analysis, learning curves, and model diagnostics across trees, ensembles, neural networks, and dimensionality reduction.",
+        "The Deep Learning course produced the multi-agent transformer project below, which I have since taken well past what the class required.",
+        "Balancing full-time ML engineering at Flock Safety with graduate coursework and independent research."
       ]
     },
     {
@@ -153,12 +151,12 @@ const educationInfo = {
       logo: require("./assets/images/m2.avif"),
       subHeader: "Bachelor of Arts in Computer Science",
       duration: "September 2020 - May 2024",
-      desc: "Graduated with a strong foundation in CS, focusing on AI, machine learning, and deep learning. Dean's List across multiple semesters. Took advanced coursework in deep learning, statistical computing, and AI while doing hands-on research.",
+      desc: "Graduated with a foundation in AI, machine learning, and deep learning, plus hands-on research in surgical computer vision.",
       descBullets: [
         "Dean's List: Fall 2020, Spring 2021, Spring 2022, Spring 2024.",
-        "Led research in robotic-assisted laparoscopic surgery, improving model accuracy by 15% using deep learning and novel segmentation algorithms.",
-        "Completed courses in Machine Learning Fundamentals, Deep Learning, Statistical Computing, and Regression Analysis, applying statistical methods to real-world problems.",
-        "Built a strong foundation in computational linear algebra and programming principles for large-scale data analysis."
+        "Contributed to a four-person research project on segmentation for robotic-assisted laparoscopic surgery, building the contour-correspondence component in OpenCV.",
+        "Coursework in Machine Learning Fundamentals, Deep Learning, Statistical Computing, and Regression Analysis.",
+        "Built a foundation in computational linear algebra and programming principles for large-scale data analysis."
       ]
     }
   ]
@@ -167,37 +165,8 @@ const educationInfo = {
 // Your top proficient stacks/tech experience
 
 const techStack = {
-  viewSkillBars: true, //Set it to true to show Proficiency Section
-  experience: [
-    {
-      Stack: "Machine Learning & Deep Learning (PyTorch, TensorFlow)",
-      progressPercentage: "95%"
-    },
-    {
-      Stack: "Computer Vision & OCR Systems",
-      progressPercentage: "90%"
-    },
-    {
-      Stack: "MLOps & Production Deployment (Docker, AWS, CI/CD)",
-      progressPercentage: "85%"
-    },
-    {
-      Stack: "Data Engineering & Pipeline Architecture",
-      progressPercentage: "85%"
-    },
-    {
-      Stack: "Reinforcement Learning & Simulation",
-      progressPercentage: "80%"
-    },
-    {
-      Stack: "LLMs & Applied AI",
-      progressPercentage: "80%"
-    },
-    {
-      Stack: "Statistical Modeling & Experimental Design",
-      progressPercentage: "85%"
-    }
-  ],
+  viewSkillBars: false, // Self-rated percentage bars read as noise to engineers. Results below do the talking.
+  experience: [],
   displayCodersrank: false // Set to true if you're displaying Codersrank badges
 };
 
@@ -207,19 +176,19 @@ const workExperiences = {
   display: true, //Set it to true to show workExperiences Section
   experience: [
     {
-      role: "Machine Learning Engineer II",
+      role: "Machine Learning Engineer, Multimodal ML",
       company: "Flock Safety",
       companylogo: require("./assets/images/flocksafety.png"),
       date: "October 2025 - Present",
-      desc: "Building and deploying production ML systems that power large-scale computer vision pipelines for public safety, serving 5,000+ law enforcement agencies across 49 states.",
+      desc: "Model quality for license plate OCR and state classification on a multi-task computer vision model running nationwide in production.",
       descBullets: [
-        "Contribute to machine learning systems deployed in production environments supporting large-scale computer vision pipelines for vehicle and license plate recognition.",
-        "Train and evaluate ML models for OCR and state classification tasks using curated datasets and iterative experimentation.",
-        "Perform exploratory data analysis and failure mode investigations to identify model misreads, edge cases, and distribution shifts across diverse plate types and environments.",
-        "Develop internal Python tools to support dataset exploration, reranking workflows, and ML experimentation.",
-        "Curate high-quality training datasets by filtering noisy samples, resolving annotation disagreements, and optimizing hit rates for targeted model training campaigns.",
-        "Collaborate with ML infrastructure and tooling teams to debug training pipeline issues and improve dataset generation workflows.",
-        "Investigate real-world model failures and edge cases to improve system robustness and accuracy."
+        "Develop and evaluate the license plate OCR and license plate state classification heads of the production license plate recognition model, covering head-level training, evaluation protocol, and error analysis.",
+        "Diagnose customer-reported misreads by isolating character-confusion patterns and unfamiliar plate fonts, tracing them to distribution shift in production data the deployed model was never trained against.",
+        "Drove edge-case plate categories from roughly 100% error on 100-plate sampled audits down to under 10% through targeted dataset curation and fine-tuning, measured by per-category F1 on held-out samples.",
+        "Monitor OCR and state prediction accuracy nationwide across all U.S. states and day/night capture conditions, investigating any category that drops below threshold and driving retraining to restore it.",
+        "Benchmark the production model against third-party OCR and image-quality models from Hugging Face, running multiple architectures in parallel to surface model weaknesses and validate training data quality.",
+        "Run and monitor training pipelines through the platform team's Prefect orchestration workflows, tracking experiment progress and diagnosing failed runs, and partner with the ML tooling team on workflow improvements.",
+        "Work on edge deployment and inference optimization for real-time video analytics."
       ]
     },
     {
@@ -227,13 +196,14 @@ const workExperiences = {
       company: "Marani Health",
       companylogo: require("./assets/images/marani.png"),
       date: "May 2024 - June 2025",
-      desc: "Sole Data Scientist leading all AI development and deployment for HIPAA-compliant healthcare solutions. Shipped production ML and LLM systems that cut provider review times and automated clinical workflows.",
+      desc: "Sole data scientist at the company, leading all data science and AI development for a HIPAA-compliant maternal health platform.",
       descBullets: [
-        "Deployed LLM-powered clinical copilots with SQL pipelines, prompt engineering, and automated data cleaning, reducing provider review times by 74% and improving patient care efficiency.",
-        "Designed automated statistical reporting pipelines that increased valid trial outcomes by 61% and boosted reporting accuracy by 40% for fragmented clinical trial datasets.",
+        "Owned the entire data science and AI function: data infrastructure, clinical trial analysis, model development, and LLM fine-tuning for patient-facing features.",
+        "Built and maintained the data lake and ingestion pipelines that consolidated fragmented clinical and device data into a single analysis-ready source.",
+        "Produced regulatory-grade statistical reporting for clinical trial research, replacing manual assembly of fragmented datasets.",
+        "Built and fine-tuned LLM-powered clinical copilots integrated with SQL pipelines and prompt engineering workflows, cutting provider review time for patient summaries and survey insights.",
         "Built scalable EHR data pipelines using JSON, HL7, and FHIR in Mirth Connect, enabling real-time maternal care monitoring across multiple healthcare systems.",
-        "Architected and deployed HIPAA-compliant LLM APIs on AWS with FastAPI, Celery, and secure logging, backed by a custom QUEST LLM evaluation framework.",
-        "Built QuickSight dashboards to track provider KPIs and patient outcome trends so leadership could make faster, data-driven clinical decisions."
+        "Architected and deployed HIPAA-compliant LLM APIs on AWS with FastAPI, Celery, and secure logging, backed by a custom QUEST LLM evaluation framework."
       ]
     },
     {
@@ -241,13 +211,13 @@ const workExperiences = {
       company: "Marani Health",
       companylogo: require("./assets/images/marani.png"),
       date: "May 2023 - May 2024",
-      desc: "Applied deep learning and MLOps to maternal and fetal health monitoring systems. Built cloud infrastructure and data pipelines to support distributed research teams.",
+      desc: "Applied deep learning and MLOps to maternal and fetal health monitoring. Built cloud infrastructure and data pipelines supporting distributed research teams.",
       descBullets: [
-        "Increased predictive accuracy by 4% in maternal and fetal heartbeat monitoring by applying EC57 research standards to deep learning architectures in Python and PyTorch.",
-        "Boosted data labeling efficiency by 50% and ensured 99.9% uptime by designing and deploying a cloud-based AWS platform (EC2, S3, Lambda) supporting distributed teams.",
-        "Improved data pipeline speed by 70% and reduced false positives by 30% while sustaining 98% model accuracy through automated Python/Pandas preprocessing and regex-based extraction.",
-        "Shortened AI model retraining cycles by implementing MLOps best practices, dataset versioning, and experiment tracking for production-ready healthcare AI.",
-        "Collaborated with cross-functional teams including clinicians, engineers, and product managers to translate medical research into scalable AI models."
+        "Improved predictive accuracy in maternal and fetal heartbeat monitoring by applying EC57 research standards to deep learning architectures in Python and PyTorch.",
+        "Designed and deployed a cloud-based AWS platform (EC2, S3, Lambda) that supported distributed labeling teams and improved labeling throughput.",
+        "Built automated Python and Pandas preprocessing with regex-based extraction, speeding up the data pipeline and reducing false positives downstream.",
+        "Shortened model retraining cycles by implementing MLOps practices, dataset versioning, and experiment tracking.",
+        "Collaborated with clinicians, engineers, and product managers to translate medical research into deployable models."
       ]
     },
     {
@@ -255,12 +225,12 @@ const workExperiences = {
       company: "Donaldson Inc.",
       companylogo: require("./assets/images/donaldson.jpg"),
       date: "January 2022 - August 2022",
-      desc: "Applied machine learning and data engineering to manufacturing intelligence at a global filtration company. Focused on sustainability and operational efficiency through anomaly detection and IoT analytics.",
+      desc: "Machine learning and data engineering for manufacturing intelligence at a global filtration company, focused on sustainability and operational efficiency.",
       descBullets: [
-        "Reduced downtime risk by enabling real-time anomaly detection in manufacturing through adapting a research-based Isolation Forest algorithm from R to Python, integrating it into factory telemetry monitoring pipelines.",
-        "Supported a 41% carbon emissions reduction target by identifying operational inefficiencies with KMeans clustering and deep neural networks, accelerating root cause analysis across IoT-connected systems.",
-        "Improved large-scale data ingestion capacity by contributing to a Snowflake-based ETL pipeline processing millions of manufacturing sensor records daily.",
-        "Recovered $100K+ in potential annual energy savings through SQL, Pandas, and Seaborn-driven analytics, delivering actionable insights to leadership."
+        "Enabled real-time anomaly detection in manufacturing by porting a research-based Isolation Forest implementation from R to Python and integrating it into factory telemetry monitoring.",
+        "Identified operational inefficiencies with KMeans clustering and deep neural networks in support of the company's carbon reduction goals.",
+        "Contributed to a Snowflake-based ETL pipeline processing millions of manufacturing sensor records daily.",
+        "Delivered energy consumption analytics with SQL, Pandas, and Seaborn that surfaced actionable savings opportunities for leadership."
       ]
     },
     {
@@ -268,12 +238,12 @@ const workExperiences = {
       company: "i4Score",
       companylogo: require("./assets/images/i4.png"),
       date: "January 2022 - May 2022",
-      desc: "Built ML-powered analytics pipelines for investment intelligence. Delivered scalable NLP and web scraping solutions that scored 2,000+ tech companies for viability prediction.",
+      desc: "ML-powered analytics for investment intelligence, scoring Michigan tech companies for viability prediction.",
       descBullets: [
-        "Delivered investment-grade analytics on 2,000+ Michigan tech companies by building a scalable Scrapy-based web scraping pipeline with 94% extraction accuracy.",
-        "Increased downstream model precision by 40% through engineering a custom regex + Pandas data preprocessing pipeline, improving feature quality for ML models.",
-        "Boosted business viability prediction accuracy by 30% by designing and fine-tuning a BERT + LSTM hybrid NLP model in PyTorch with optimized hyperparameters.",
-        "Automated evaluation workflows for hundreds of regional startups, enabling faster market readiness assessments for local investors."
+        "Built a Scrapy-based web scraping pipeline collecting structured profiles for 2,000+ Michigan tech companies.",
+        "Engineered a regex and Pandas preprocessing pipeline that improved feature quality for downstream models.",
+        "Designed and fine-tuned a BERT + LSTM hybrid NLP model in PyTorch for business viability prediction.",
+        "Automated evaluation workflows for hundreds of regional startups, speeding up market readiness assessments for local investors."
       ]
     }
   ]
@@ -291,16 +261,47 @@ const openSource = {
 
 const completedProjects = {
   title: "Projects",
-  subtitle:
-    "COMPLETED ML PROJECTS THAT DEMONSTRATE PRODUCTION-QUALITY ENGINEERING",
+  subtitle: "WORK WHERE THE NUMBERS REPRODUCE FROM COMMITTED ARTIFACTS",
   projects: [
+    {
+      title:
+        "Predicting Receiver Openness at the Throw: A Multi-Agent Spatio-Temporal Transformer",
+      date: "Jan 2026 - Aug 2026",
+      association: "Georgia Institute of Technology",
+      description:
+        "Whether a multi-agent spatio-temporal transformer can predict which receiver will be most open at the throw better than straight-line physics. It cannot, and establishing that was the work. A 1.3M-parameter model with spatial attention across players and temporal attention across frames, self-supervised trajectory pretraining, then a fine-tuned openness head. It reaches statistical parity with zero-parameter constant-velocity extrapolation and never beats it, at any forecast horizon tested. The original course version reported 82-84%; validity work dissolved that into three failures that never crashed, and all three are now CI regression tests verified to fail when the bug is reintroduced.",
+      tags: [
+        "Transformers",
+        "PyTorch",
+        "Self-Supervised Pretraining",
+        "Statistical Testing",
+        "Reproducibility"
+      ],
+      icon: "fas fa-diagram-project",
+      link: "https://github.com/BattleTaco/nfl-receiver-openness",
+      linkLabel: "Code and every reported number",
+      chart: {
+        type: "bars",
+        title: "Top-1 accuracy, held-out weeks 17-18",
+        caption:
+          "Paired McNemar test cannot separate the transformer from physics (p = 0.54). Three seeds, scored once on untouched data.",
+        max: 100,
+        unit: "%",
+        series: [
+          {label: "Constant velocity (0 params)", value: 79.3, highlight: true},
+          {label: "Transformer (1.3M params)", value: 78.2},
+          {label: "MLP baseline", value: 74.9},
+          {label: "Static geometry floor", value: 70.3}
+        ]
+      }
+    },
     {
       title:
         "Empirical Evaluation of Supervised and Unsupervised Learning Systems",
       date: "Aug 2025 - Dec 2025",
       association: "Georgia Institute of Technology",
       description:
-        "Ran rigorous, controlled experiments to evaluate how classical ML systems perform under realistic data conditions. Implemented and analyzed decision trees, ensemble methods, neural networks, K-Means, GMMs, PCA, ICA, and Random Projections. The focus was on reproducibility, bias-variance tradeoff analysis, and understanding failure modes rather than chasing a single metric.",
+        "Controlled experiments on how classical ML systems behave under realistic data conditions. Implemented and analyzed decision trees, ensemble methods, neural networks, K-Means, GMMs, PCA, ICA, and Random Projections. The focus was reproducibility, bias-variance analysis, and understanding failure modes rather than chasing a single metric.",
       tags: [
         "Supervised Learning",
         "Unsupervised Learning",
@@ -311,11 +312,26 @@ const completedProjects = {
       icon: "fas fa-microscope"
     },
     {
-      title: "Kaggle Competition Portfolio, Top 10% Contributor",
+      title: "Reinforcement Learning for Stock Trading",
+      date: "May 2025 - Aug 2025",
+      association: "Georgia Institute of Technology",
+      description:
+        "ML systems that learn trading strategies from historical market data, across six subprojects covering constraint-based portfolio optimization, reinforcement learning agents (Q-Learning, policy gradient), and custom market simulators for strategy evaluation.",
+      tags: [
+        "Reinforcement Learning",
+        "Q-Learning",
+        "Portfolio Optimization",
+        "Market Simulation",
+        "Time-Series Analysis"
+      ],
+      icon: "fas fa-chart-line"
+    },
+    {
+      title: "Feature Engineering for Tabular Competition Modeling",
       date: "Jul 2025 - Aug 2025",
       association: "Independent",
       description:
-        "Hit 0.93 ROC AUC and placed in the top 10% of a binary classification competition with a custom XGBoost pipeline. Built FeatureComb, a feature engineering framework that auto-generates 1,000+ two-way and three-way categorical feature interactions to capture relationships that standard encoding misses. The full pipeline includes custom preprocessing, stratified cross-validation, and hyperparameter tuning.",
+        "Built FeatureComb, a feature engineering framework that auto-generates two-way and three-way categorical interactions to capture relationships standard encoding misses, wrapped in a custom XGBoost pipeline with stratified cross-validation and hyperparameter tuning.",
       tags: [
         "XGBoost",
         "Feature Engineering",
@@ -323,22 +339,7 @@ const completedProjects = {
         "Cross Validation",
         "Model Optimization"
       ],
-      icon: "fas fa-trophy"
-    },
-    {
-      title: "Reinforcement Learning for Stock Trading",
-      date: "May 2025 - Aug 2025",
-      association: "Georgia Institute of Technology",
-      description:
-        "Built ML systems that learn trading strategies from historical market data. The project spans six major subprojects covering portfolio optimization with constraint-based allocation, reinforcement learning agents (Q-Learning, policy gradient), and custom market simulators for strategy evaluation.",
-      tags: [
-        "Reinforcement Learning",
-        "Portfolio Optimization",
-        "Q-Learning",
-        "Market Simulation",
-        "Time-Series Analysis"
-      ],
-      icon: "fas fa-chart-line"
+      icon: "fas fa-layer-group"
     }
   ],
   display: true // Set false to hide this section, defaults to true
@@ -348,48 +349,72 @@ const completedProjects = {
 
 const researchProjects = {
   title: "Research",
-  subtitle:
-    "ACTIVE RESEARCH APPLYING MACHINE LEARNING TO REAL-WORLD SCIENTIFIC PROBLEMS",
+  subtitle: "INDEPENDENT RESEARCH, HYPOTHESES WRITTEN DOWN BEFORE THE RESULTS",
   projects: [
     {
-      title:
-        "Machine Learning for Paleontology: Detecting Fossilized Structures Using Computer Vision and Geophysical Data",
-      date: "2025 - Present",
-      status: "Proposed Research (In Development)",
-      association: "Independent Research",
+      title: "Non-Invasive Fossil Prospecting from Ground-Penetrating Radar",
+      date: "March 2026 - Present",
+      status: "Active Research",
+      association: "Independent Research, sole author",
       overview:
-        "I'm exploring whether machine learning and computer vision can help paleontologists find fossilized structures buried underground. Right now, fossil discovery mostly depends on manual fieldwork and a lot of excavation. I want to see if ML models can analyze geological imaging data and pick up on patterns that match fossilized bone structures before any digging starts.",
+        "Fossil discovery still runs on manual survey and a lot of digging. I am testing whether a subsurface anomaly detector trained on voids and utilities transfers to fossil-like targets, and my hypothesis says it should not. High-permittivity bone reflects negative at the top interface where a low-permittivity void reflects positive, and the bone contrast is roughly 1.7x weaker in dry sand. I validated that inversion in a 1D forward model first, then promoted it into a claim about machine learning transfer. Four sub-hypotheses, each with its falsification condition written down before anything was run, including one that treats a null result on real data as a publishable finding.",
       phases: [
         {
-          title: "Subsurface Fossil Detection",
+          title: "Controlled Synthetic Benchmark",
           description:
-            "Using geophysical imaging data (ground-penetrating radar, seismic imaging, geological tomography) with CNNs, Vision Transformers, and 3D CNN architectures to spot structural anomalies that look like fossilized remains. Also involves signal normalization, noise reduction, and representation learning through PCA, autoencoders, and VAEs."
+            "A gprMax benchmark that holds scene geometry, depth, host medium, and target geometry constant and varies only the target dielectric, emitting each scene once per target type under a shared ID so conditions pair exactly. Four conditions: void, bone, a magnitude-matched anti-bone control that isolates polarity from contrast strength, and a null with no contrast."
         },
         {
-          title: "Fossil Classification",
+          title: "Physics Baseline Before Deep Learning",
           description:
-            "Building classification systems to identify bone type, species, and morphological similarity from digitized fossil scans with ResNet, EfficientNet, and Vision Transformers. Working with datasets from the Smithsonian, MorphoSource, and digital morphology repositories."
+            "A Ricker-pulse matched filter with zero learned parameters that reads reflection polarity from normalized cross-correlation. It classifies all four conditions correctly and groups the anti-bone control with the void exactly as the mechanism predicts. If a CNN cannot beat this, the extra complexity has not earned its place."
+        },
+        {
+          title: "Learned Detection and the Real-Data Anchor",
+          description:
+            "YOLOv8n detectors on synthetic B-scans reach mAP@0.5 of 0.58 to 0.60. Everything so far is synthetic. The open question, and the one that decides whether any of this matters, is whether it survives contact with real fossil GPR digitized from the literature."
         }
       ],
       researchQuestions: [
-        "Can ML models pick up on structural patterns in geophysical imaging data that actually correspond to fossilized bone?",
-        "How well can computer vision tell the difference between real fossilized bone and geological formations that just look like bone?",
-        "Can representation learning pull out meaningful geological features from subsurface scans to improve fossil detection?"
+        "Does a void-trained subsurface detector fail on fossil-like targets specifically because reflection polarity inverts, rather than because synthetic data just looks different?",
+        "Can physics-grounded synthetic bone data plus polarity-aware adaptation measurably close that gap?",
+        "Does any of it transfer to real fossil GPR, and if not, is the negative result itself the contribution?"
       ],
       tags: [
         "Computer Vision",
-        "Deep Learning",
-        "Paleontology",
-        "Geophysics",
-        "CNNs",
-        "Vision Transformers",
-        "Representation Learning",
-        "Anomaly Detection"
+        "Signal Processing",
+        "gprMax",
+        "YOLOv8",
+        "Physics Baselines",
+        "Domain Shift",
+        "Paleontology"
       ],
       icon: "fas fa-bone",
-      githubLink: "", // GitHub link, to be added when repository is created
+      githubLink: "https://github.com/BattleTaco/paleo-gpr-ml",
+      chart: {
+        type: "polarity",
+        title: "Physics baseline separates bone from voids by polarity alone",
+        caption:
+          "Top-interface reflection sign, dry sand at 400 MHz. The anti-bone control carries bone's contrast magnitude with a void's sign, and the filter groups it with the void. Zero learned parameters, synthetic gprMax data.",
+        rows: [
+          {label: "Void", eps: "ε = 1.0", sign: 1, detected: true},
+          {label: "Bone", eps: "ε = 9.0", sign: -1, detected: true},
+          {
+            label: "Anti-bone (control)",
+            eps: "ε = 1.8",
+            sign: 1,
+            detected: true
+          },
+          {
+            label: "Null (no contrast)",
+            eps: "ε = 4.0",
+            sign: 0,
+            detected: false
+          }
+        ]
+      },
       motivation:
-        "Dinosaurs and ancient life have fascinated me since I was a kid. This project sits right at the intersection of two things I really care about: machine learning and paleontology. I want to see if ML can actually help with scientific discovery and maybe speed up paleontological research in a meaningful way."
+        "Dinosaurs got me into science before anything else did. This sits right where machine learning meets paleontology, and I would rather find out honestly whether ML can help paleontologists than assume it can."
     }
   ],
   display: true // Set false to hide this section, defaults to true

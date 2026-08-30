@@ -246,3 +246,30 @@
     margin-bottom: 1rem;
   }
 }
+
+.project-card-actions {
+  margin: 16px 0 4px 0;
+}
+
+.project-link-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: 6px;
+  border: 1px solid rgba(0, 0, 0, 0.16);
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.25s ease;
+}
+
+.project-link-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.14);
+}
+
+.project-link-btn-dark {
+  border-color: rgba(255, 255, 255, 0.24);
+}

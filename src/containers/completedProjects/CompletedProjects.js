@@ -3,6 +3,7 @@ import "./CompletedProjects.scss";
 import {completedProjects} from "../../portfolio";
 import {Fade} from "react-awesome-reveal";
 import StyleContext from "../../contexts/StyleContext";
+import ResultChart from "../../components/resultChart/ResultChart";
 
 export default function CompletedProjects() {
   const {isDark} = useContext(StyleContext);
@@ -69,6 +70,24 @@ export default function CompletedProjects() {
                       </div>
                     </div>
                     <p className="project-card-desc">{project.description}</p>
+                    {project.chart && <ResultChart chart={project.chart} />}
+                    {project.link && (
+                      <div className="project-card-actions">
+                        <a
+                          href={project.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className={
+                            isDark
+                              ? "project-link-btn project-link-btn-dark"
+                              : "project-link-btn"
+                          }
+                        >
+                          <i className="fab fa-github"></i>{" "}
+                          {project.linkLabel || "View on GitHub"}
+                        </a>
+                      </div>
+                    )}
                     {project.tags && (
                       <div className="project-card-tags">
                         {project.tags.map((tag, j) => (

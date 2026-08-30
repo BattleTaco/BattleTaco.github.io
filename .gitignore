@@ -35,3 +35,6 @@ DEPLOYMENT_GUIDE.txt
 
 #template contributor files
 .all-contributorsrc
+
+# local backups
+*.bak
