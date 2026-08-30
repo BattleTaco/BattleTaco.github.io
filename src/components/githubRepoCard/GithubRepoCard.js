@@ -4,6 +4,12 @@ import {Fade} from "react-awesome-reveal";
 import {formatFileSizeDisplay} from "../../utils";
 
 export default function GithubRepoCard({repo, isDark}) {
+  // `stargazerCount` is what fetch.js requests now; the nested `stargazers`
+  // shape is kept as a fallback so a previously generated profile.json still
+  // renders instead of blowing up.
+  const starCount =
+    repo.node.stargazerCount ?? repo.node.stargazers?.totalCount;
+
   function openUrlInNewTab(url, name) {
     if (!url) {
       console.log(`URL in ${name} is undefined`);
@@ -81,7 +87,7 @@ export default function GithubRepoCard({repo, isDark}) {
                     d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"
                   ></path>
                 </svg>
-                <p>{repo.node.stargazers.totalCount}</p>
+                <p>{starCount ?? 0}</p>
               </span>
             </div>
             <div className="repo-right-stat">

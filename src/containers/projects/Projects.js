@@ -24,7 +24,16 @@ export default function Projects() {
           throw result;
         })
         .then(response => {
-          setrepoFunction(response.data.user.pinnedItems.edges);
+          const edges = response?.data?.user?.pinnedItems?.edges ?? [];
+          // A pinned repo comes back as `{node: null}` when GitHub could not
+          // read every requested field, so only keep complete records.
+          const usable = edges.filter(edge => edge?.node?.id);
+          if (usable.length < edges.length) {
+            console.warn(
+              `Skipped ${edges.length - usable.length} incomplete pinned repository record(s) from profile.json`
+            );
+          }
+          setrepoFunction(usable);
         })
         .catch(function (error) {
           console.error(
@@ -41,6 +50,7 @@ export default function Projects() {
   }
   if (
     !(typeof repo === "string" || repo instanceof String) &&
+    repo.length > 0 &&
     openSource.display
   ) {
     return (
@@ -48,16 +58,9 @@ export default function Projects() {
         <div className="main" id="opensource">
           <h1 className="project-title">Open Source Projects</h1>
           <div className="repo-cards-div-main">
-            {repo.map((v, i) => {
-              if (!v) {
-                console.error(
-                  `Github Object for repository number : ${i} is undefined`
-                );
-              }
-              return (
-                <GithubRepoCard repo={v} key={v.node.id} isDark={isDark} />
-              );
-            })}
+            {repo.map(v => (
+              <GithubRepoCard repo={v} key={v.node.id} isDark={isDark} />
+            ))}
           </div>
           <Button
             text={"More Projects"}

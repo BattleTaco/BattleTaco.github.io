@@ -23,7 +23,11 @@ export default function Profile() {
             }
           })
           .then(response => {
-            setProfileFunction(response.data.user);
+            const user = response?.data?.user;
+            if (!user) {
+              throw new Error("profile.json contained no GitHub user data");
+            }
+            setProfileFunction(user);
           })
           .catch(function (error) {
             console.error(
@@ -39,7 +43,9 @@ export default function Profile() {
   if (
     openSource.display &&
     openSource.showGithubProfile === "true" &&
-    !(typeof prof === "string" || prof instanceof String)
+    prof &&
+    !(typeof prof === "string" || prof instanceof String) &&
+    !Array.isArray(prof)
   ) {
     return (
       <Suspense fallback={renderLoader()}>

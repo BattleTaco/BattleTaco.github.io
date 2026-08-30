@@ -6,6 +6,7 @@ import StackProgress from "./skillProgress/skillProgress";
 import Footer from "../components/footer/Footer";
 import ScrollToTopButton from "./topbutton/Top";
 import SplashScreen from "./splashScreen/SplashScreen";
+import ErrorBoundary from "../components/errorBoundary/ErrorBoundary";
 import {splashScreen} from "../portfolio";
 import {StyleProvider} from "../contexts/StyleContext";
 import {useLocalStorage} from "../hooks/useLocalStorage";
@@ -28,6 +29,23 @@ const Talks = lazy(() => import("./talks/Talks"));
 const Twitter = lazy(() => import("./twitter-embed/twitter"));
 const Podcast = lazy(() => import("./podcast/Podcast"));
 const Profile = lazy(() => import("./profile/Profile"));
+
+// Sections are isolated so that a single failing one is hidden rather than
+// taking the whole page down with it.
+const sections = [
+  ["Education", Education],
+  ["WorkExperience", WorkExperience],
+  ["CompletedProjects", CompletedProjects],
+  ["ResearchProjects", ResearchProjects],
+  ["Projects", Projects],
+  ["StartupProject", StartupProject],
+  ["Achievement", Achievement],
+  ["Blogs", Blogs],
+  ["Talks", Talks],
+  ["Twitter", Twitter],
+  ["Podcast", Podcast],
+  ["Profile", Profile]
+];
 
 const Main = () => {
   const darkPref = window.matchMedia("(prefers-color-scheme: dark)");
@@ -58,23 +76,24 @@ const Main = () => {
           <SplashScreen />
         ) : (
           <>
-            <Header />
-            <Greeting />
-            <Skills />
-            <StackProgress />
+            <ErrorBoundary name="Header">
+              <Header />
+            </ErrorBoundary>
+            <ErrorBoundary name="Greeting">
+              <Greeting />
+            </ErrorBoundary>
+            <ErrorBoundary name="Skills">
+              <Skills />
+            </ErrorBoundary>
+            <ErrorBoundary name="StackProgress">
+              <StackProgress />
+            </ErrorBoundary>
             <Suspense fallback={<div />}>
-              <Education />
-              <WorkExperience />
-              <CompletedProjects />
-              <ResearchProjects />
-              <Projects />
-              <StartupProject />
-              <Achievement />
-              <Blogs />
-              <Talks />
-              <Twitter />
-              <Podcast />
-              <Profile />
+              {sections.map(([name, Section]) => (
+                <ErrorBoundary name={name} key={name}>
+                  <Section />
+                </ErrorBoundary>
+              ))}
             </Suspense>
             <Footer />
             <ScrollToTopButton />

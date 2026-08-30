@@ -15,6 +15,55 @@ function isValidUsername(username) {
   return /^[a-zA-Z0-9_-]+$/.test(username);
 }
 
+// GitHub's GraphQL API returns HTTP 200 with a partial payload when a field is
+// not readable by the caller: the offending field's whole parent node comes back
+// as null alongside an `errors` array. Writing that raw payload used to hand the
+// UI `{node: null}` entries, which crashed rendering. Drop the unusable pieces
+// here so the site only ever sees complete records.
+function sanitizeProfileResponse(rawBody) {
+  let parsed;
+  try {
+    parsed = JSON.parse(rawBody);
+  } catch (error) {
+    console.warn(
+      `GitHub profile response was not valid JSON: ${error.message}`
+    );
+    return null;
+  }
+
+  if (Array.isArray(parsed.errors)) {
+    parsed.errors.forEach(error => {
+      console.warn(
+        `GitHub GraphQL ${error.type || "error"} at ${(error.path || []).join(".")}: ${error.message}`
+      );
+    });
+  }
+
+  const user = parsed.data && parsed.data.user;
+  if (!user) {
+    console.warn("GitHub GraphQL response contained no user data.");
+    return null;
+  }
+
+  if (user.pinnedItems && Array.isArray(user.pinnedItems.edges)) {
+    const usable = user.pinnedItems.edges.filter(
+      edge => edge && edge.node && edge.node.id
+    );
+    const dropped = user.pinnedItems.edges.length - usable.length;
+    if (dropped > 0) {
+      console.warn(
+        `Dropped ${dropped} pinned repository record(s) that came back incomplete.`
+      );
+    }
+    user.pinnedItems.edges = usable;
+    user.pinnedItems.totalCount = usable.length;
+  }
+
+  // The app only ever reads `data`; keeping `errors` around just invites the
+  // next consumer to trip over a partial payload.
+  return JSON.stringify({data: parsed.data});
+}
+
 const ERR = {
   noUserName:
     "Github Username was found to be undefined. Please set all relevant environment variables.",
@@ -57,9 +106,7 @@ if (USE_GITHUB_DATA === "true") {
               name
               description
               forkCount
-              stargazers {
-                totalCount
-              }
+              stargazerCount
               url
               id
               diskUsage
@@ -100,7 +147,14 @@ if (USE_GITHUB_DATA === "true") {
       data += d;
     });
     res.on("end", () => {
-      fs.writeFile("./public/profile.json", data, function (err) {
+      const sanitized = sanitizeProfileResponse(data);
+      if (!sanitized) {
+        console.warn(
+          "GitHub profile data was unusable; leaving public/profile.json untouched."
+        );
+        return;
+      }
+      fs.writeFile("./public/profile.json", sanitized, function (err) {
         if (err) return console.log(err);
         console.log("saved file to public/profile.json");
       });
