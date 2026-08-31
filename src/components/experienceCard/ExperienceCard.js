@@ -1,23 +1,29 @@
 import React, {useState, useRef, useCallback} from "react";
 import "./ExperienceCard.scss";
-import ColorThief from "colorthief";
-
-const colorThief = new ColorThief();
+// colorthief 3 dropped the default-exported class for named functions, and
+// returns a Color object rather than a bare [r, g, b] tuple. `array()` gives
+// back the tuple this card has always used.
+import {getColorSync} from "colorthief";
 
 export default function ExperienceCard({cardInfo, isDark}) {
   const [colorArrays, setColorArrays] = useState([]);
   const imgRef = useRef();
 
   const getColorArrays = useCallback(() => {
-    if (imgRef.current) {
-      setColorArrays(colorThief.getColor(imgRef.current));
+    if (!imgRef.current) {
+      return;
     }
+    // Returns null when the image cannot be sampled (a tainted canvas, say).
+    const color = getColorSync(imgRef.current);
+    setColorArrays(color ? color.array() : []);
   }, []);
 
   function rgb(values) {
-    return typeof values === "undefined"
-      ? null
-      : "rgb(" + values.join(", ") + ")";
+    // Before the logo loads this is [], which would render "rgb()" — not a
+    // valid color — so fall through to no banner tint instead.
+    return Array.isArray(values) && values.length === 3
+      ? "rgb(" + values.join(", ") + ")"
+      : null;
   }
 
   const GetDescBullets = ({descBullets, isDark}) => {

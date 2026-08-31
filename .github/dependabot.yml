@@ -12,6 +12,15 @@ updates:
       interval: "weekly"
     commit-message:
       prefix: "ci"
+    groups:
+      # codeql-action/init and codeql-action/analyze must always run the same
+      # version — CodeQL aborts with "not all workflow steps use the same
+      # version" if they drift. Ungrouped, Dependabot opened one PR per step,
+      # and each was individually unmergeable because merging either half
+      # created exactly that mismatch. Grouping keeps them in one PR.
+      codeql:
+        patterns:
+          - "github/codeql-action*"
 
   - package-ecosystem: "npm"
     directory: "/"
