@@ -13,6 +13,15 @@
   height: 200px;
 }
 
+// The rule above hard-codes a white background for every theme. In dark mode
+// the card also gets white `.small-dark` text, so the title and description
+// were white-on-white and the card rendered as an empty panel. Compound
+// selector so this wins over the single-class rule whatever the source order.
+.blog-container.dark-mode {
+  background-color: $darkBackground;
+  box-shadow: 0 0 36px $darkBoxShadow;
+}
+
 .blog-title {
   color: $blogCardTitleColor;
   font-size: 1.375rem;

@@ -474,6 +474,30 @@ const blogSection = {
   displayMediumBlogs: "false", // Set true to display fetched medium blogs instead of hardcoded ones
   blogs: [
     {
+      url: "https://medium.com/@Michael_Ram/my-first-foray-into-kaggles-store-sales-forecasting-25e2d2edf366",
+      title: "My First Foray into Kaggle's Store Sales Forecasting",
+      description:
+        "Time-series forecasting across thousands of product families in the Favorita store sales competition, and where a tidy problem statement stops being tidy."
+    },
+    {
+      url: "https://medium.com/@Michael_Ram/back-to-kaggle-how-i-hit-0-967-3b079ed8b81e",
+      title: "Back to Kaggle: How I Hit 0.967",
+      description:
+        "Back on Kaggle with one rule: ship something clean, reproducible, and correct. Careful preprocessing and XGBoost, no leakage, 0.967 on Playground Series S5E8."
+    },
+    {
+      url: "https://medium.com/@Michael_Ram/ethics-in-ai-2-the-nightmare-of-predictive-ai-f7d0fd484d38",
+      title: "Ethics in AI #2 - The Nightmare of Predictive AI",
+      description:
+        "Humans have always wanted to predict the future. What goes wrong when we point predictive AI at people and treat the output as fact."
+    },
+    {
+      url: "https://medium.com/@Michael_Ram/cracking-the-code-how-resnet-revolutionized-deep-learning-4d250f4afec8",
+      title: "How ResNet Changed Deep Learning",
+      description:
+        "Why stacking more layers stopped making networks better, and how residual connections fixed it. A walk through the ResNet paper."
+    },
+    {
       url: "https://medium.com/@Michael_Ram/ethics-in-ai-1-6bccc89006c6",
       title: "Ethics in AI #1",
       description:
