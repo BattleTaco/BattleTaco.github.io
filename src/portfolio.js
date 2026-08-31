@@ -7,7 +7,7 @@ import splashAnimation from "./assets/lottie/splashAnimation"; // Rename to your
 const splashScreen = {
   enabled: true, // set false to disable splash screen
   animation: splashAnimation,
-  duration: 2000 // Set animation duration as per your animation
+  duration: 1000 // Long enough to register, short enough not to gate the page
 };
 
 // Summary And Greeting Section
@@ -20,7 +20,7 @@ const greeting = {
   username: "Michael Ramirez",
   title: "Hi y'all, I'm Michael!",
   subTitle:
-    "Machine Learning Engineer at Flock Safety, working on the OCR and state classification task heads of a multi-task license plate recognition model deployed nationwide. Most of my job is figuring out why a model fails on the plates it has never seen, then closing that gap with better data. I also run independent research on the side, and I care more about results that reproduce than results that impress.",
+    "Machine Learning Engineer at Flock Safety, working on the OCR and state classification task heads of a multi-task license plate recognition model deployed nationwide. Most of my job is figuring out why a model fails on the plates it has never seen, then closing that gap with better data. On the side I run independent research on whether ground-penetrating radar can find fossils, which is the closest I have gotten to the dinosaurs that got me into science in the first place. Either way, I care more about results that reproduce than results that impress.",
   resumeLink: "./resume.pdf", // Set to empty to hide the button
   displayGreeting: true // Set false to hide this section, defaults to true
 };
@@ -515,7 +515,9 @@ const contactInfo = {
   title: "Contact Me",
   subtitle:
     "If you want to talk about ML, or you think I got something on this site wrong, email me.",
-  number: "+1-8328369584",
+  // Phone deliberately left out: this page is public and indexed, and a tel:
+  // link is trivially harvested. Email and LinkedIn are the way in.
+  number: "",
   email_address: "galvis14306@gmail.com"
 };
 
