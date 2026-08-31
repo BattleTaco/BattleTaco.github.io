@@ -13,12 +13,11 @@ export default function AchievementCard({cardInfo, isDark}) {
         ></img>
       </div>
       <div className="certificate-detail-div">
-        <h5 className={isDark ? "dark-mode card-title" : "card-title"}>
-          {cardInfo.title}
-        </h5>
-        <p className={isDark ? "dark-mode card-subtitle" : "card-subtitle"}>
-          {cardInfo.description}
-        </p>
+        {/* No `dark-mode` class here: that utility paints a page-level
+            background, which on a card renders as a dark rectangle behind the
+            text. The card themes its own title and subtitle instead. */}
+        <h5 className="card-title">{cardInfo.title}</h5>
+        <p className="card-subtitle">{cardInfo.description}</p>
       </div>
       <div className="certificate-card-footer">
         {cardInfo.footer.map((v, i) => {

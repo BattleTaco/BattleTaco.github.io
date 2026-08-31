@@ -30,6 +30,26 @@
 .certificate-detail-div {
   text-align: center;
 }
+
+// `.certificate-card` above hard-codes a white background for every theme, so
+// in dark mode the card stayed white and clashed with the rest of the page.
+// Compound selector so it wins over the single-class rule whatever the order.
+.certificate-card.dark-mode {
+  background-color: $darkBackground;
+}
+
+.certificate-card.dark-mode .card-title,
+.certificate-card.dark-mode .card-subtitle {
+  color: $textColorDark;
+}
+
+// Several certificate logos are dark artwork on transparency (DataCamp is the
+// worst case) and disappear against a dark card. A light plate keeps every
+// logo legible and reads as deliberate rather than as a rendering bug.
+.certificate-card.dark-mode .certificate-image-div {
+  background-color: $lightBackground1;
+  border-radius: 8px;
+}
 .certificate-card:hover {
   box-shadow: $lightBoxShadowDark 0px 20px 30px -10px;
 }
