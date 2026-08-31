@@ -1,6 +1,4 @@
-/* Change this file to get your personal Portfolio */
-
-// To change portfolio colors globally go to the  _globalColor.scss file
+/* All site copy lives here. Colors are in _globalColor.scss. */
 
 import splashAnimation from "./assets/lottie/splashAnimation"; // Rename to your file name for custom animation
 
@@ -142,8 +140,7 @@ const educationInfo = {
       descBullets: [
         "Completed: Deep Learning, Reinforcement Learning, Machine Learning, Machine Learning for Trading, and AI Ethics.",
         "Coursework has been heavy on empirical evaluation: bias-variance analysis, learning curves, and model diagnostics across trees, ensembles, neural networks, and dimensionality reduction.",
-        "The Deep Learning course produced the multi-agent transformer project below, which I have since taken well past what the class required.",
-        "Balancing full-time ML engineering at Flock Safety with graduate coursework and independent research."
+        "The Deep Learning course produced the multi-agent transformer project below, which I have since taken well past what the class required."
       ]
     },
     {
@@ -151,12 +148,12 @@ const educationInfo = {
       logo: require("./assets/images/m2.avif"),
       subHeader: "Bachelor of Arts in Computer Science",
       duration: "September 2020 - May 2024",
-      desc: "Graduated with a foundation in AI, machine learning, and deep learning, plus hands-on research in surgical computer vision.",
+      desc: "Studied AI, machine learning, and deep learning, and got my first real research experience in surgical computer vision.",
       descBullets: [
         "Dean's List: Fall 2020, Spring 2021, Spring 2022, Spring 2024.",
         "Contributed to a four-person research project on segmentation for robotic-assisted laparoscopic surgery, building the contour-correspondence component in OpenCV.",
         "Coursework in Machine Learning Fundamentals, Deep Learning, Statistical Computing, and Regression Analysis.",
-        "Built a foundation in computational linear algebra and programming principles for large-scale data analysis."
+        "Computational linear algebra and programming for large-scale data analysis."
       ]
     }
   ]
@@ -227,7 +224,7 @@ const workExperiences = {
         "Enabled real-time anomaly detection in manufacturing by porting a research-based Isolation Forest implementation from R to Python and integrating it into factory telemetry monitoring.",
         "Identified operational inefficiencies with KMeans clustering and deep neural networks in support of the company's carbon reduction goals.",
         "Contributed to a Snowflake-based ETL pipeline processing millions of manufacturing sensor records daily.",
-        "Delivered energy consumption analytics with SQL, Pandas, and Seaborn that surfaced actionable savings opportunities for leadership."
+        "Delivered energy consumption analytics with SQL, Pandas, and Seaborn that showed leadership where the savings actually were."
       ]
     },
     {
@@ -235,7 +232,7 @@ const workExperiences = {
       company: "i4Score",
       companylogo: require("./assets/images/i4.png"),
       date: "January 2022 - May 2022",
-      desc: "ML-powered analytics for investment intelligence, scoring Michigan tech companies for viability prediction.",
+      desc: "Scored Michigan tech companies on business viability so local investors could triage which ones to look at.",
       descBullets: [
         "Built a Scrapy-based web scraping pipeline collecting structured profiles for 2,000+ Michigan tech companies.",
         "Engineered a regex and Pandas preprocessing pipeline that improved feature quality for downstream models.",
@@ -246,9 +243,7 @@ const workExperiences = {
   ]
 };
 
-/* Your Open Source Section to View Your Github Pinned Projects
-To know how to get github key look at readme.md */
-
+// Pinned GitHub repos, fetched at build time by fetch.js.
 const openSource = {
   showGithubProfile: "true", // Set true or false to show Contact profile using Github, defaults to true
   display: true // Set false to hide this section, defaults to true
@@ -258,7 +253,7 @@ const openSource = {
 
 const completedProjects = {
   title: "Projects",
-  subtitle: "WORK WHERE THE NUMBERS REPRODUCE FROM COMMITTED ARTIFACTS",
+  subtitle: "EVERY NUMBER HERE REPRODUCES FROM COMMITTED CODE",
   projects: [
     {
       title:
@@ -421,7 +416,7 @@ const researchProjects = {
 
 const bigProjects = {
   title: "Big Projects",
-  subtitle: "SOME STARTUPS AND COMPANIES THAT I HELPED TO CREATE THEIR TECH",
+  subtitle: "",
   projects: [],
   display: false // Set false to hide this section, defaults to true
 };
@@ -431,8 +426,7 @@ const bigProjects = {
 
 const achievementSection = {
   title: "Certifications & Honors",
-  subtitle:
-    "Professional certifications and academic recognition I've picked up along the way.",
+  subtitle: "Certifications and academic recognition.",
 
   achievementsCards: [
     {
@@ -476,14 +470,14 @@ const achievementSection = {
 const blogSection = {
   title: "Blogs",
   subtitle:
-    "I like writing about what I'm learning, whether it's responsible AI, machine learning, or just the craft of building things that matter.",
+    "I write up what I'm learning, mostly responsible AI and machine learning, usually before I have it fully figured out.",
   displayMediumBlogs: "false", // Set true to display fetched medium blogs instead of hardcoded ones
   blogs: [
     {
       url: "https://medium.com/@Michael_Ram/ethics-in-ai-1-6bccc89006c6",
       title: "Ethics in AI #1",
       description:
-        "In Ethics in AI #1, I explore the critical need for ethical oversight in AI, discussing issues like biased policing and ethical data collection as AI technology rapidly advances."
+        "A first pass at why AI needs ethical oversight, working through biased policing and data collection as the concrete cases."
     }
   ],
   display: true // Set false to hide this section, defaults to true
@@ -495,14 +489,7 @@ const talkSection = {
   title: "TALKS",
   subtitle: "TALKS AND PRESENTATIONS",
 
-  talks: [
-    {
-      title: "",
-      subtitle: "",
-      slides_url: "",
-      event_url: ""
-    }
-  ],
+  talks: [],
   display: false // Set false to hide this section, defaults to true
 };
 
@@ -510,9 +497,9 @@ const talkSection = {
 
 const podcastSection = {
   title: "Podcast",
-  subtitle: "I LOVE TO TALK ABOUT MYSELF AND TECHNOLOGY",
+  subtitle: "",
 
-  // Please Provide with Your Podcast embeded Link
+  // Add an embed link here if this section is ever turned on.
   podcast: [],
   display: false // Set false to hide this section, defaults to true
 };
@@ -521,15 +508,13 @@ const podcastSection = {
 const resumeSection = {
   title: "Resume",
   subtitle: "Feel free to download my resume",
-
-  // Please Provide with Your Podcast embeded Link
   display: true // Set false to hide this section, defaults to true
 };
 
 const contactInfo = {
   title: "Contact Me",
   subtitle:
-    "Want to talk about ML, collaborate on something, or just say hi? My inbox is always open.",
+    "If you want to talk about ML, or you think I got something on this site wrong, email me.",
   number: "+1-8328369584",
   email_address: "galvis14306@gmail.com"
 };
@@ -537,7 +522,7 @@ const contactInfo = {
 // Twitter Section
 
 const twitterDetails = {
-  userName: "twitter", //Replace "twitter" with your twitter username without @
+  userName: "",
   display: false // Set true to display this section, defaults to false
 };
 
