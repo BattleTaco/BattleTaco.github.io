@@ -38,3 +38,6 @@ DEPLOYMENT_GUIDE.txt
 
 # local backups
 *.bak
+
+# Claude Code local settings
+.claude/
